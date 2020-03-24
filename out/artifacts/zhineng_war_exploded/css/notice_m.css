@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form, input, img {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+}
+
+/*搜索框样式*/
+.noticeSearch {
+    height: 55px;
+    width: 840px;
+    margin: 0 auto;
+}
+
+.btnNotice {
+    float: left;
+    border: none;
+    background: white;
+    color: black;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.btnNotice:hover {
+    color: red;
+}
+
+.noticeSearch form {
+    width: 200px;
+    height: 25px;
+    border: black solid 1px;
+    border-radius: 29px;
+    float: right;
+    margin-top: 15px;
+}
+
+.search01 {
+    width: 160px;
+    height: 19px;
+    float: left;
+    margin: 4px 0 3px 10px;
+    border: 0;
+    outline: none;
+}
+
+
+.search02 {
+    cursor: pointer;
+    width: 20px;
+    height: 19px;
+    outline: none;
+}
+
+/*表格样式*/
+.noticeTable {
+    width: 840px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.noticeTable a {
+    color: black;
+}
+
+.noticeTable #allAdminNotice {
+    width: 840px;
+    table-layout: fixed;
+}
+
+.noticeTable #allAdminNotice .name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.noticeTable a:hover {
+    color: red;
+}
+
+.delete {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    margin: 20px 42px;
+    outline: none;
+}
+
+td {
+    text-align: center;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #C8C8C8;
+}
+
+table {
+    margin-bottom: 20px;
+}

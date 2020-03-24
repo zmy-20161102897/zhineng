@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form, input, img {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+}
+
+.head {
+    height: 70px;
+    margin: 0 auto;
+    background: #FFB468;
+}
+
+.top {
+    width: 1515px;
+    margin: 0 auto;
+}
+
+.top img {
+    height: 70px;
+    width: 200px;
+    padding-left: 15px;
+    float: left;
+}
+
+.manageName {
+    float: right;
+    padding-right: 60px;
+}
+
+.noAdmin {
+    margin: auto;
+    height: 70px;
+    float: right;
+    padding-right: 60px;
+}
+
+.manageName a {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.manageName button {
+    cursor: pointer;
+}
+
+/*导航栏*/
+.navigation {
+    height: 70px;
+    border-bottom: #FFB468 solid 1px;
+}
+
+nav {
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+nav ul li {
+    float: left;
+    display: block;
+    height: 50px;
+    width: 200px;
+}
+
+nav ul li a {
+    display: block;
+    width: 198px;
+    height: 48px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: black;
+    border: 1px solid white;
+}
+
+nav ul li a:hover {
+    /*background: palegoldenrod;*/
+    border-radius: 50px;
+    border: 1px solid darkgray;
+}

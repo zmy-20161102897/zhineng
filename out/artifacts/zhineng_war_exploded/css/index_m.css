@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form, input, img {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+}
+
+/*搜索框样式*/
+.adminSearch {
+    height: 55px;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.adminSearch form {
+    width: 200px;
+    height: 25px;
+    border: black solid 1px;
+    border-radius: 29px;
+    float: right;
+    margin-top: 15px;
+}
+
+.search01 {
+    width: 160px;
+    height: 19px;
+    float: left;
+    margin: 4px 0 3px 10px;
+    border: 0;
+    outline: none;
+}
+
+.search02 {
+    cursor: pointer;
+    width: 20px;
+    height: 19px;
+    margin: 3px 0px 3px 0px;
+    outline: none;
+}
+
+/*表格样式*/
+.adminTable {
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.adminTable img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin: 10px 25px;
+}
+
+.adminTable a {
+    color: black;
+}
+
+.adminTable a:hover {
+    color: red;
+    cursor: pointer;
+}
+
+td {
+    text-align: center;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #C8C8C8;
+    height: 40px;
+}
+
+table {
+    /*margin-bottom: 20px;*/
+}
