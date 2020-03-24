@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form,input,img { margin: 0; padding: 0;}
+li{ list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;
+    font-weight: normal;}
+a{ text-decoration: none;}
+a:hover{ text-decoration: none;}
+body{ font-size: 14px;}
+
+.adminBox{width: 850px;
+    height: auto;
+    margin: 0 auto;}
+/*字样式*/
+.title1{ width:850px;
+    height:30px;
+    background:#FFDFBF;
+    margin-top: 20px;}
+.title2{ width:850px;
+    height:30px;
+    background:#FFDFBF;
+    margin-top: 20px;}
+.title1 span{ font-size:16px;
+    font-weight:bold;
+    line-height:30px;
+    margin-left:20px;}
+.title2 span{ font-size:16px;
+    font-weight:bold;
+    line-height:30px;
+    margin-left:20px;}
+/*表格样式*/
+.adminMsg img{ height:100px;
+    width:100px;
+    border-radius:50px;}
+td{ border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #C8C8C8;
+    height:40px;
+    line-height:40px;
+    font-size:14px;}
+.textR{ text-align:right;
+    font-weight:bold;}
+.textL{ text-align:left;}
+/*发布公告表格样式*/
+.adminNotice table{ margin-left:25px;}
+.textC{ text-align:center;}
+.adminNotice table td a{ color:black;}
+.adminNotice table td a:hover{ color:red;}

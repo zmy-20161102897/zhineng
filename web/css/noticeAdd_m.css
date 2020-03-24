@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form,input,img { margin: 0; padding: 0;}
+li{ list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;
+    font-weight: normal;}
+a{ text-decoration: none;}
+a:hover{ text-decoration: none;}
+body{ font-size: 14px;}
+
+.noticeBox{ width: 1000px;
+    margin: 0 auto;}
+.noticeBox h1{ font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    margin-top: 30px;}
+form{ height:auto;
+    width:1000px;
+    margin: 0 auto;}
+/*公告标题样式*/
+.noticeTitle{ height:40px;
+    padding-left:90px;
+    margin-top: 20px;}
+.noticeTitle span{ font-size:16px;
+    line-height:40px;}
+.noticeTitle input{ width:350px;
+    height:20px;}
+/*公告正文样式*/
+.noticeText{ height:400px;
+    padding-left:90px;
+    padding-top:10px;}
+.noticeText span{ vertical-align:top;
+    font-size:16px;}
+.noticeText textarea{ width:790px;
+    height:390px;
+    font-size:16px;}
+/*公告按钮样式*/
+.noticeBtn{ height:40px;
+    margin-top:20px;
+    padding-left:400px;}
+.btnSave{ color:white;
+    background:orange;
+    width:113px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    font-size:14px;
+    cursor: pointer;
+    border: none;
+    font-weight:bold;
+    border-radius:5px;
+    outline:none;}
+.btnSave:hover{ background:#ff6901;}
+.btnQuit{ background:#dadee1;
+    margin-left:20px;
+    color:#03C;
+    width:113px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    font-size:14px;
+    cursor: pointer;
+    border: none;
+    font-weight:bold;
+    border-radius:5px;
+    outline:none;}
+.btnQuit:hover{ background:#39F;
+    color:white;}
