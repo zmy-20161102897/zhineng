@@ -1,7 +1,7 @@
 package test;
 
-//import bean.Tgoods;
-//import dao.GoodsDao;
+import bean.Tgoods;
+import dao.GoodsDao;
 import utils.Img2StrUtils;
 
 import java.io.File;

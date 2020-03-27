@@ -97,7 +97,7 @@ public class Tadmin {
     public void setAdminPic(String adminPic) {
         this.adminPic = adminPic;
         if (adminPic != null) {
-            Img2StrUtils.str2Img(this.adminPic, "D:\\IdeaProjects\\graduationProject\\zhineng\\out\\artifacts\\zhineng_war_exploded\\img\\admin\\" + this.adminId, "png");
+            Img2StrUtils.str2Img(this.adminPic, "IdeaProjects\\graduationProject\\zhineng\\out\\artifacts\\zhineng_war_exploded\\img\\admin\\" + this.adminId, "png");
         }
     }
 

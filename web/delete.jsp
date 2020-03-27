@@ -1,5 +1,6 @@
 <%@ page import="service.NoticeService" %>
 <%@ page import="service.UserService" %>
+<%@ page import="service.GoodsService" %>
 <%--
   Created by IntelliJ IDEA.
   User: MACHENIKE
@@ -18,6 +19,10 @@
         int userId = Integer.parseInt(request.getParameter("userID"));
         int delete = new UserService().deleteUser(userId);
         response.sendRedirect("user_m.jsp");
+    } else if ("goods".equals(type)) {
+        int goodsID = Integer.parseInt(request.getParameter("goodsID"));
+        int delete = new GoodsService().deleteGoods(goodsID);
+        response.sendRedirect("goods_m.jsp");
     }
 %>
 <html>
