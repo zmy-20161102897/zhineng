@@ -8,65 +8,135 @@ a{ text-decoration: none;}
 a:hover{ text-decoration: none;}
 body{ font-size: 14px;}
 
-.goodsAddBox{ width: 810px;
+.goodsAddBox{
+    width: 1010px;
     height: auto;
-    margin: 0 auto;}
-.goodsAddBox h1{ font-size:20px;
+    margin-left: 320px;
+    padding-bottom: 50px;
+}
+.goodsAddBox h1{
+    font-size:20px;
     font-weight:bold;
-    text-align:center;
-    margin: 20px 0px 20px 0px;}
+    margin: 20px 0 20px 350px;
+}
 /*表单样式*/
-.goodsAddBox form{ height:auto;
-    width:900px;}
-.goodsAddBox label{ width:100px;
+.goodsAddBox form{
+    height:auto;
+    width:1010px;
+}
+.goodsAddBox label{
+    width:110px;
     display:block;
     font-size:16px;
     color: #666;
     text-align:right;
-    float:left;
-    margin-right:10px;}
-/*标题样式*/
-.goodsTitle{ height:45px;}
-.goodsTitle input{ width:600px;
-    height:20px;
-    outline:none;}
-/*封面图样式*/
-.goodsPic{ height:170px;
-    width:810px;}
-.addPic{ height:134px;
-    width:134px;
-    border:#E2E2E2 solid 7px;
-    margin-right:26px;
-    float:left;}
-.goodsPic input{ margin:25px 35px;
-    outline:none;}
-/*商品介绍*/
-.goodsIntro{ height:auto;
-    width:800px;
-    margin-bottom:23px;}
-.goodsIntro textarea{ width:600px;
-    height:90px;
-    font-size:16px;
-    outline:none;}
-/*详情图样式*/
-.addPicMore{ height:134px;
-    width:134px;
-    border:#E2E2E2 solid 7px;
-    float:left;}
-.addPicMore input{ margin:23px 15px;
-    outline:none;}
+}
+/*商品名称样式*/
+.goodsTitle{
+    height:45px;
+    display: flex;
+    display: -webkit-flex;
+}
+.goodsTitle input{
+    width:500px;
+    height:26px;
+    border-radius: 5px;
+    border:1px solid gray;
+    outline: none;
+    padding: 2px 8px;
+}
+.goodsTitle label{
+    margin-top: 4px;
+}
+.goodsTitleWordage{
+    padding-left: 15px;
+    margin-top: 3px;
+}
+
+/*上传封面图样式*/
+.introPicBox{
+    height: 210px;
+}
+.introPicBox label{
+    float: left;
+}
+.uploadIntroPic{
+    width: 810px;
+    float: left;
+    border-radius: 5px;
+}
+.uploadIntroPic em{
+    color: red;
+    font-style: normal;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+/*推荐商品样式*/
+.goodsText{
+    display: flex;
+    display: -webkit-flex;
+    height: auto;
+}
+.reason{
+    width: 810px;
+    float: left;
+    border-radius: 5px;
+}
+.reason textarea{
+    width: 500px;
+    height: 150px;
+    outline: none;
+    border-radius: 5px;
+}
 /*商品价格样式*/
-.goodsPrice{ width:800px;}
-.goodsPrice input{ width:100px;
-    height:22px;
-    outline:none;
-    margin-bottom:20px;}
-.goodsPrice span{ font-size:12px;
-    color:#555;}
-/*按钮样式*/
-.btn{ width:800px;
-    margin-bottom:40px;}
-.btnBase{ width:100px;
+.goodsPrice{
+    display: flex;
+    display: -webkit-flex;
+    height: 50px;
+    line-height: 50px;
+}
+.goodsPrice div{
+    width: 500px;
+}
+.goodsPrice div input{
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    height: 23px;
+}
+.goodsPrice div em{
+    font-size: 12px;
+    color: #666;
+}
+/*上传详情图样式goodsTitle*/
+.detailsPicBox{
+    height: 210px;
+}
+.detailsPicBox label{
+    float: left;
+}
+.uploadDetailsPic{
+    width: 810px;
+    float: left;
+    border-radius: 5px;
+}
+.uploadDetailsPic em{
+    color: red;
+    font-style: normal;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+/*按钮*/
+.goodsBtn{ height:40px;
+    padding-top:20px;
+    width: 1010px;
+    margin: 0 auto;
+}
+.goodsBtn button{
+    width:113px;
     height:35px;
     line-height:35px;
     text-align:center;
@@ -74,13 +144,25 @@ body{ font-size: 14px;}
     cursor: pointer;
     border: none;
     font-weight:bold;
-    border-radius:5px;}
-.btnSave{ color:white;
+    border-radius:5px;
+    outline:none;
+}
+.btnSave{
+    color:white;
     background:orange;
-    margin-left: 290px;}
-.btnSave:hover{ background:#ff6901;}
-.btnQuit{ background:#dadee1;
+    margin-left: 350px;
+}
+.btnSave:hover{
+    background:#ff6901;
+}
+.btnQuit{
+    background:#dadee1;
     margin-left:20px;
-    color:#03C;}
+    color:#03C;
+}
 .btnQuit:hover{ background:#39F;
-    color:white;}
+    color:white;
+}
+
+
+
