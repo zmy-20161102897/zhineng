@@ -20,10 +20,10 @@
     <form enctype="multipart/form-data">
         <!--商品名称div开始-->
         <div class="goodsTitle">
-            <label><em style="color: red; font-style: normal;">*</em>商品名称：</label>
-            <input type="text" placeholder="请输入商品名称..." onkeyup="goodsTitleLength(this)" >
+            <label><em>*</em>商品名称：</label>
+            <input type="text" placeholder="请输入商品名称..." onkeyup="goodsTitleLength(this)" ><br/>
             <span class="goodsTitleWordage">剩余字数：
-                <span id="goodsTileRemain" style="color: red;">30</span>
+                <span id="goodsTileRemain">40</span>
             </span>
         </div>
         <!--商品名称div结束-->
@@ -31,33 +31,46 @@
         <div class="goodsText">
             <label>推荐原因：</label>
             <div class="reason">
-                <textarea name="description" style="resize:none;" onkeyup="goodsTextLength(this)"></textarea>
-                <span class="goodsTextWordage" style="padding-left: 15px; ">剩余字数：
-                    <span id="goodsTextRemain" style="color: red;">500</span>
+                <textarea name="description" onkeyup="goodsTextLength(this)"></textarea>
+                <span class="goodsTextWordage">剩余字数：
+                    <span id="goodsTextRemain">500</span>
                 </span>
             </div>
         </div>
         <!--商品推荐原因div结束-->
         <!--商品价格div开始-->
         <div class="goodsPrice">
-            <label><em style="color: red; font-style: normal;">*</em>商品价格：</label>
+            <label><em>*</em>商品价格：</label>
             <div>
                 <input type="text" placeholder="例：800.00">
                 <em>单位：￥</em>
             </div>
         </div>
         <!--商品价格div结束-->
+        <!--品牌div开始-->
+        <div class="goodsBland goodsCommon">
+            <label><em>*</em>品牌：</label>
+            <input type="text">
+        </div>
+        <!--品牌div结束-->
+        <!--型号div开始-->
+        <div class="goodsModel goodsCommon">
+            <label><em>*</em>型号：</label>
+            <input type="text">
+        </div>
+        <!--型号div结束-->
         <!--上传商品介绍图div开始-->
         <div class="introPicBox">
-            <label><em style="color: red; font-style: normal;">*</em>商品介绍图：</label>
+            <label><em>*</em>商品介绍图：</label>
             <div class="uploadIntroPic">
                 <jsp:include page="uploadGoodsImg.jsp" flush="true"/>
                 <em>至少添加一张图片，最多可添加五张</em>
             </div>
         </div>
-        <!--上传商品详情图div结束-->
+        <!--上传商品介绍图div结束-->
+        <!--上传商品详情图div开始-->
         <div class="detailsPicBox">
-            <label><em style="color: red; font-style: normal;">*</em>商品详情图：</label>
+            <label><em>*</em>商品详情图：</label>
             <div class="uploadDetailsPic">
                 <jsp:include page="uploadGoodsImg.jsp" flush="true"/>
                 <em>至少添加一张图片，最多可添加五张</em>
@@ -74,7 +87,7 @@
 
 <script type="text/javascript">
     function goodsTitleLength(which) {
-        var maxChars = 30; //
+        var maxChars = 40; //
         if(which.value.length > maxChars){
             alert("输入标题字数达到上限!");
             // 超过限制的字数了就将 文本框中的内容按规定的字数 截取 从第一个字符开始到上限

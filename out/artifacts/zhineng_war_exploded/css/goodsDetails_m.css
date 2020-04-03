@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form,input,img { margin: 0; padding: 0;}
+li{ list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;
+    font-weight: normal;}
+a{ text-decoration: none;}
+a:hover{ text-decoration: none;}
+body{ font-size: 14px;}
+
+/*框架样式*/
+.goodsDetailsBox{
+    width: 900px;
+    margin: 20px auto;
+    height: auto;
+}
+.goodsDetailsBox .goodsInfo{
+    height: 300px;
+    display: flex;
+    display: -webkit-flex;
+    border: 1px solid gray;
+}
+.goodsDetailsBox .recommend{
+    height: auto;
+}
+.goodsDetailsBox .showDetailsImg{
+    height: auto;
+}
+/*商品介绍图样式*/
+.goodsInfo .goodsInfoL{
+    height: 300px;
+    width: 500px;
+    background: yellow;
+}
+/*商品信息样式*/
+.goodsInfo .goodsInfoR{
+    height: 300px;
+    width: 400px;
+}
+.goodsInfo .goodsInfoR .showGoodsTitle{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: bold;
+    margin: 15px 5px 10px 10px;
+}
+.goodsInfo .goodsInfoOther{
+    font-size: 14px;
+    padding: 10px 0 10px 10px;
+    margin-top: 20px;
+}
+.goodsInfo .goodsInfoOther p{
+    line-height: 30px;
+}
+.goodsInfo .showGoodsPrice{
+    padding: 10px 0 0 10px;
+}
+.goodsInfo .showGoodsPrice strong{
+    color: #ff4848;
+    font-size: 26px;
+    font-weight: normal;
+}
+/*商品推荐样式*/
+.recommend span, .showDetailsImg span{
+    font-size: 16px;
+    border-bottom: 3px solid #ffc900;
+}
+/*推荐文字*/
+.recommend div, .showDetailsImg div{
+    border: 1px solid gray;
+}
+.recommend div{
+    height: auto;
+}
+/*商品详情*/
+.showDetailsImg div{
+    height: auto;
+}
+
+

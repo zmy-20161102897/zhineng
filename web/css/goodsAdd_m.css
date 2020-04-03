@@ -37,6 +37,13 @@ body{ font-size: 14px;}
     display: flex;
     display: -webkit-flex;
 }
+.goodsTitle label{
+    margin-top: 4px;
+}
+.goodsTitle label em{
+    color: red;
+    font-style: normal;
+}
 .goodsTitle input{
     width:500px;
     height:26px;
@@ -45,32 +52,12 @@ body{ font-size: 14px;}
     outline: none;
     padding: 2px 8px;
 }
-.goodsTitle label{
-    margin-top: 4px;
-}
-.goodsTitleWordage{
+.goodsTitle .goodsTitleWordage{
     padding-left: 15px;
     margin-top: 3px;
 }
-
-/*上传封面图样式*/
-.introPicBox{
-    height: 210px;
-}
-.introPicBox label{
-    float: left;
-}
-.uploadIntroPic{
-    width: 810px;
-    float: left;
-    border-radius: 5px;
-}
-.uploadIntroPic em{
+.goodsTitle .goodsTitleWordage span{
     color: red;
-    font-style: normal;
-    font-size: 12px;
-    margin-top: 5px;
-    display: block;
 }
 /*推荐商品样式*/
 .goodsText{
@@ -78,23 +65,34 @@ body{ font-size: 14px;}
     display: -webkit-flex;
     height: auto;
 }
-.reason{
+.goodsText .reason{
     width: 810px;
     float: left;
     border-radius: 5px;
 }
-.reason textarea{
+.goodsText .reason textarea{
     width: 500px;
     height: 150px;
     outline: none;
     border-radius: 5px;
+    resize :none;
+}
+.goodsText .reason .goodsTextWordage{
+    padding-left: 15px;
+}
+.goodsText .reason .goodsTextWordage span{
+    color: red;
 }
 /*商品价格样式*/
 .goodsPrice{
     display: flex;
     display: -webkit-flex;
-    height: 50px;
-    line-height: 50px;
+    height: 45px;
+    line-height: 45px;
+}
+.goodsPrice label em{
+    color: red;
+    font-style: normal;
 }
 .goodsPrice div{
     width: 500px;
@@ -110,19 +108,43 @@ body{ font-size: 14px;}
     font-size: 12px;
     color: #666;
 }
-/*上传详情图样式goodsTitle*/
-.detailsPicBox{
-    height: 210px;
+/*品牌和型号样式*/
+.goodsCommon{
+    display: flex;
+    display: -webkit-flex;
+    height: 45px;
+    line-height: 45px;
 }
-.detailsPicBox label{
+.goodsCommon label em{
+    color: red;
+    font-style: normal;
+}
+.goodsCommon input{
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    height: 23px;
+    margin-top: 12px;
+}
+/*上传封面图样式*/
+.introPicBox, .detailsPicBox{
+    height: 210px;
+    margin-top: 10px;
+}
+.introPicBox label, .detailsPicBox label{
     float: left;
 }
-.uploadDetailsPic{
+.introPicBox label em, .detailsPicBox label em{
+    color: red;
+    font-style: normal;
+}
+.introPicBox .uploadIntroPic, .detailsPicBox .uploadDetailsPic{
     width: 810px;
     float: left;
     border-radius: 5px;
 }
-.uploadDetailsPic em{
+.introPicBox .uploadIntroPic em, .detailsPicBox .uploadDetailsPic em{
     color: red;
     font-style: normal;
     font-size: 12px;
@@ -136,8 +158,8 @@ body{ font-size: 14px;}
     margin: 0 auto;
 }
 .goodsBtn button{
-    width:113px;
-    height:35px;
+    width: 113px;
+    height: 35px;
     line-height:35px;
     text-align:center;
     font-size:14px;

@@ -44,26 +44,26 @@ body {
     float: left;
 }
 
-.manageName {
+.top .manageName {
     float: right;
     padding-right: 60px;
 }
 
-.noAdmin {
+.top .noAdmin {
     margin: auto;
     height: 70px;
     float: right;
     padding-right: 60px;
 }
 
-.manageName a {
+.top .manageName a {
     font-size: 16px;
     color: white;
     font-weight: bold;
     line-height: 70px;
 }
 
-.manageName button {
+.top .manageName button {
     cursor: pointer;
 }
 
@@ -73,23 +73,23 @@ body {
     border-bottom: #FFB468 solid 1px;
 }
 
-nav {
-    width: 1000px;
+.navigation nav {
+    width: 1020px;
     height: 50px;
     margin: 0 auto;
     padding-top: 10px;
 }
 
-nav ul li {
+.navigation nav ul li {
     float: left;
     display: block;
     height: 50px;
-    width: 200px;
+    width: 170px;
 }
 
-nav ul li a {
+.navigation nav ul li a {
     display: block;
-    width: 198px;
+    width: 168px;
     height: 48px;
     text-align: center;
     line-height: 50px;
@@ -98,7 +98,7 @@ nav ul li a {
     border: 1px solid white;
 }
 
-nav ul li a:hover {
+.navigation nav ul li a:hover {
     /*background: palegoldenrod;*/
     border-radius: 50px;
     border: 1px solid darkgray;
