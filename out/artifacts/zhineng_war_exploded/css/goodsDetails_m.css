@@ -30,12 +30,79 @@ body{ font-size: 14px;}
 .goodsInfo .goodsInfoL{
     height: 300px;
     width: 500px;
-    background: yellow;
+    display: flex;
+    display: -webkit-flex;
+}
+/*大图样式*/
+.goodsInfoL .goodsBigImg{
+    width: 370px;
+    height: 300px;
+    position: relative;
+}
+.goodsBigImg img{
+    max-width: 350px;
+    max-height: 280px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 10px;
+}
+/*小图样式*/
+.goodsInfoL .goodsSmallImg{
+    width: 130px;
+    height: 290px;
+    margin-top: 5px;
+}
+.goodsSmallImg .upImgDisable, .goodsSmallImg .downImgDisable{
+    display: block;
+    width: 120px;
+    height: 20px;
+    background-size: 120px 20px;
+    cursor: pointer;
+}
+.goodsSmallImg .upImgDisable{
+    background-image: url("../img/proImg.png");
+    margin-top: 10px;
+}
+.goodsSmallImg .downImgDisable{
+    background-image: url("../img/nextImg.png");
+}
+.goodsSmallImg ul{
+    height: 225px;
+    width: 120px;
+}
+.goodsSmallImg ul li{
+    height: 68px;
+    margin: 5px 0;
+    width: 118px;
+    position: relative;
+    border: 1px dashed black;
+}
+.goodsSmallImg ul li img{
+    max-width: 118px;
+    max-height: 68px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity:0.5;
+}
+.goodsSmallImg ul li img:hover{
+    opacity: 1.0;
+}
+.goodsSmallImg ul .curImg img{
+    opacity: 1.0;
 }
 /*商品信息样式*/
 .goodsInfo .goodsInfoR{
-    height: 300px;
-    width: 400px;
+    height: 280px;
+    width: 380px;
+    padding: 10px 10px;
 }
 .goodsInfo .goodsInfoR .showGoodsTitle{
     font-size: 18px;
@@ -59,21 +126,48 @@ body{ font-size: 14px;}
     font-size: 26px;
     font-weight: normal;
 }
-/*商品推荐样式*/
-.recommend span, .showDetailsImg span{
-    font-size: 16px;
-    border-bottom: 3px solid #ffc900;
-}
-/*推荐文字*/
-.recommend div, .showDetailsImg div{
-    border: 1px solid gray;
-}
-.recommend div{
-    height: auto;
-}
 /*商品详情*/
-.showDetailsImg div{
+.showGoodsDetails{
     height: auto;
+    margin-top: 20px;
 }
+.showGoodsDetails span{
+    border-bottom: 3px solid #ffc900;
+    font-size: 16px;
+}
+.showGoodsDetails .goodsDescribe{
+    height: auto;
+    border-top: 1px solid darkgray;
+    padding: 10px 10px;
+}
+.showGoodsDetails .showDetailsImg{
+    height: auto;
+    border-bottom: 1px solid darkgray;
+    overflow:hidden;
+}
+.goodsDescribe, .showDetailsImg{
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+}
+/*推荐文字样式*/
+.goodsDescribe p{
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 25px;
+}
+/*详情图样式*/
+.showDetailsImg ul{
+    width: 800px;
+    margin: 0 auto;
+}
+.showDetailsImg ul li{
+    margin: 10px 0;
+}
+.showDetailsImg ul li img{
+    width: 800px;
+    height: auto;
+    margin: auto;
+}
+
 
 

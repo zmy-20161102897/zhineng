@@ -10,26 +10,26 @@
 <head>
     <title>Title</title>
 </head>
-<link rel="stylesheet" type="text/css" href="css/uploadGoodsImg.css">
+<link rel="stylesheet" type="text/css" href="css/uploadDetailsImg.css">
 <body>
 <%--    <div class="aui-content-up">--%>
-    <div class="uploadInfoBox uploadInfoImg clear">
-        <section class="infoBackImg fl">
-            <img src="img/up.png" class="addInfoImg">
-            <input type="file" name="file" id="infoFile" class="infoFile" value="" accept="image/jpg,image/jpeg,image/png" multiple/>
-        </section>
-    </div>
+<div class="uploadDeBox uploadDeImg clear">
+    <section class="uploadBackDeImg fl">
+        <img src="img/up.png" class="addDeImg">
+        <input type="file" name="file" id="deFile" class="deFile" value="" accept="image/jpg,image/jpeg,image/png" multiple/>
+    </section>
+</div>
 <%--    </div>--%>
-    <!-- mask begin -->
-    <div class="infoMask info-works-mask">
-        <div class="infoMaskContent">
-            <p class="deleteInfoText">确定要删除图片？</p>
-            <p class="delInfoCheckText">
-                <span class="deleteInfoImg aui-accept-ok">确定</span>
-                <span class="aui-accept-no">取消</span>
-            </p>
-        </div>
+<!-- mask begin -->
+<div class="deMask de-works-mask">
+    <div class="maskDeContent">
+        <p class="deleteDeText">确定要删除图片？</p>
+        <p class="delDeCheckText">
+            <span class="deleteDeImg aui-accept-ok">确定</span>
+            <span class="aui-accept-no">取消</span>
+        </p>
     </div>
+</div>
 <!-- mask end -->
 <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 <%--<script type="text/javascript" src="js/up.js"></script>--%>
@@ -40,15 +40,15 @@
     $(function() {
         var delParent;
         var defaults = {
-            fileType: ["jpg", "png", "jpeg"],
+            fileType: ["jpg", "png", "bmp", "jpeg"],
             // 上传图片支持的格式
             //fileSize: 1024 * 1024 * 10 // 上传的图片大小不得超过 10M
         };
         /*点击图片*/
-        $(".infoFile").change(function() {
+        $(".deFile").change(function() {
             var idFile = $(this).attr("id");
             var file = document.getElementById(idFile);
-            var imgContainer = $(this).parents(".uploadInfoBox");
+            var imgContainer = $(this).parents(".uploadDeBox");
             //存放图片的父元素
             var fileList = file.files;
             //获取的图片文件
@@ -57,33 +57,33 @@
             //文本框的父亲元素
             var imgArr = [];
             //遍历得到的图片
-            var numUp = imgContainer.find(".showInfoImgSection").length;
+            var numUp = imgContainer.find(".showDeImgSection").length;
             var totalNum = numUp + fileList.length;
             //图片总的数量可自定义
             if (fileList.length > 5 || totalNum > 5) {
                 alert("你好！上传图片不得超过5张，请重新选择");
-                //一次选择上传超过5个  自己定义
+                //一次选择上传超过3个  自己定义
             } else if (numUp < 5) {
                 fileList = validateUp(fileList);
                 for (var i = 0; i < fileList.length; i++) {
                     var imgUrl = window.URL.createObjectURL(fileList[i]);
                     imgArr.push(imgUrl);
-                    var $section = $("<section class='showInfoImgSection fl infoLoading'>");
+                    var $section = $("<section class='showDeImgSection fl deLoading'>");
                     imgContainer.prepend($section);
-                    var $span = $("<span class='info-up-span'>");
+                    var $span = $("<span class='de-up-span'>");
                     $span.appendTo($section);
 
-                    var $img0 = $("<img class='closeShowInfoImg'>").on("click", function(event) {
+                    var $img0 = $("<img class='closeShowDeImg'>").on("click", function(event) {
                         event.preventDefault();
                         event.stopPropagation();
-                        $(".info-works-mask").show();
+                        $(".de-works-mask").show();
                         delParent = $(this).parent();
                     });
                     $img0.attr("src", "img/close.png").appendTo($section);
-                    var $img = $("<img class='info-to-up-img info-up-clarity'>");
+                    var $img = $("<img class='de-to-up-img de-up-clarity'>");
                     $img.attr("src", imgArr[i]);
                     $img.appendTo($section);
-                    var $p = $("<p class='infoImgNameP'>");
+                    var $p = $("<p class='deImgNameP'>");
                     $p.html(fileList[i].name).appendTo($section);
                     var $input = $("<input id='actionId' name='actionId' value='' type='hidden'>");
                     $input.appendTo($section);
@@ -93,10 +93,10 @@
                 }
             }
             setTimeout(function() {
-                $(".showInfoImgSection").removeClass("infoLoading");
-                $(".info-to-up-img").removeClass("info-up-clarity");
+                $(".showDeImgSection").removeClass("deLoading");
+                $(".de-to-up-img").removeClass("de-up-clarity");
             }, 4100);
-            numUp = imgContainer.find(".showInfoImgSection").length;
+            numUp = imgContainer.find(".showDeImgSection").length;
             if (numUp >= 5) {
                 $(this).parent().hide();
             }
@@ -104,23 +104,23 @@
             $(this).val("");
         });
 
-        $(".uploadInfoBox").delegate(".closeShowInfoImg", "click", function() {
-            $(".info-works-mask").show();
+        $(".uploadDeBox").delegate(".closeShowDeImg", "click", function() {
+            $(".de-works-mask").show();
             delParent = $(this).parent();
         });
 
         $(".aui-accept-ok").click(function() {
-            $(".info-works-mask").hide();
+            $(".de-works-mask").hide();
             var numUp = delParent.siblings().length;
             if (numUp < 5) {
-                delParent.parent().find(".infoBackImg").show();
+                delParent.parent().find(".uploadBackDeImg").show();
             }
             delParent.remove();
 
         });
 
         $(".aui-accept-no").click(function() {
-            $(".info-works-mask").hide();
+            $(".de-works-mask").hide();
         });
 
         function validateUp(files) {

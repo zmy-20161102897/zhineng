@@ -8,7 +8,7 @@ a{ text-decoration: none;}
 a:hover{ text-decoration: none;}
 body{ font-size: 14px;}
 
-.uploadPhotoBox {
+.uploadInfoBox {
     padding: 15px 10px;
     border-radius: 3px;
     border: 1px dashed gray;
@@ -16,10 +16,10 @@ body{ font-size: 14px;}
     height: 150px;
     margin: 0 auto;
 }
-.uploadPhotoBox .uploadBackImg {
+.uploadInfoBox .infoBackImg {
     position: relative;
 }
-.uploadBackImg .file {
+.infoBackImg .infoFile {
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -29,11 +29,11 @@ body{ font-size: 14px;}
     z-index: 100;
     cursor: pointer;
 }
-.uploadPhotoBox .showImgSection {
+.uploadInfoBox .showInfoImgSection {
     position: relative;
     margin-right: 10px;
 }
-.showImgSection .closeShowImg {
+.showInfoImgSection .closeShowInfoImg {
     position: absolute;
     top: -10px;
     right: -12px;
@@ -42,7 +42,7 @@ body{ font-size: 14px;}
     width: 20px;
     cursor:pointer;
 }
-.showImgSection .aui-up-span {
+.showInfoImgSection .info-up-span {
     display: block;
     width: 100%;
     height: 100%;
@@ -54,24 +54,24 @@ body{ font-size: 14px;}
     background: rgba(0,0,0,.5);
     border: 1px solid #ddd;
 }
-.showImgSection:hover .closeShowImg {
+.showInfoImgSection:hover .closeShowInfoImg {
     display: block;
 }
-.showImgSection:hover .aui-up-span {
+.showInfoImgSection:hover .info-up-span {
     visibility: visible;
 }
-.uploadPhotoBox .aui-to-up-img {
+.uploadInfoBox .info-to-up-img {
     display: block;
     width: 100%;
     height: 100%;
     border:1px solid #ddd;
 }
-.loading {
+.infoLoading {
     border: 1px solid #D1D1D1;
     background: url(../img/loading.gif) no-repeat center;
     background-size:20px;
 }
-.aui-up-clarity {
+.info-up-clarity {
     opacity: 0;
 }
 .fl {
@@ -85,26 +85,26 @@ body{ font-size: 14px;}
     display: block;
     clear: both;
 }
-.uploadImg .showImgSection {
+.uploadInfoImg .showInfoImgSection {
     width: 150px;
     height: 150px;
 }
-.uploadImg .uploadBackImg {
+.uploadInfoImg .infoBackImg {
     width: 150px;
     height: 150px;
 }
-.uploadBackImg .addImg {
+.infoBackImg .addInfoImg {
     display: block;
     width: 150px;
     height: 150px;
     border:1px dashed #ddd;
     border-radius:3px;
 }
-.imgNameP{
+.infoImgNameP{
     display:none;
 }
 /*遮罩层样式*/
-.mask {
+.infoMask {
     z-index: 1000;
     display: none;
     position: fixed;
@@ -114,7 +114,7 @@ body{ font-size: 14px;}
     height: 100%;
     background: rgba(0,0,0,.5);
 }
-.mask .maskContent {
+.infoMask .infoMaskContent {
     width: 340px;
     position: absolute;
     top: 50%;
@@ -125,14 +125,14 @@ body{ font-size: 14px;}
     height: 150px;
     text-align: center;
 }
-.mask .maskContent .deleteText {
+.infoMask .infoMaskContent .deleteInfoText {
     color: #555;
     height: 105px;
     line-height: 105px;
     font-size: 14px;
     border-bottom: 1px solid #D1D1D1;
 }
-.maskContent .delCheckText {
+.infoMaskContent .delInfoCheckText {
     height: 45px;
     line-height: 45px;
     position: absolute;
@@ -140,7 +140,7 @@ body{ font-size: 14px;}
     left: 0;
     width: 100%;
 }
-.maskContent .delCheckText span {
+.infoMaskContent .delInfoCheckText span {
     width: 49%;
     display: inline-block;
     text-align: center;
@@ -148,7 +148,7 @@ body{ font-size: 14px;}
     font-size: 14px;
     cursor: pointer;
 }
-.delCheckText .deleteImg {
+.delInfoCheckText .deleteInfoImg {
     border-right: 1px solid #D1D1D1;
 }
 

@@ -72,7 +72,7 @@
         <div class="detailsPicBox">
             <label><em>*</em>商品详情图：</label>
             <div class="uploadDetailsPic">
-                <jsp:include page="uploadGoodsImg.jsp" flush="true"/>
+                <jsp:include page="uploadDetailsImg.jsp" flush="true"/>
                 <em>至少添加一张图片，最多可添加五张</em>
             </div>
         </div>
