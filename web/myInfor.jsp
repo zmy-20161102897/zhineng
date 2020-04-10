@@ -72,9 +72,27 @@
                 <!--保存按钮结束-->
             </div>
             <!--修改个人信息结束-->
-            <div class="tab-item" id="tab-two">111</div>
+            <div class="tab-item" id="tab-two">
+                <ul>
+                    <li>
+                        <label>原密码：</label>
+                        <input type="password" class="oldPassWord">
+                        <span></span>
+                    </li>
+                    <li>
+                        <label>新密码：</label>
+                        <input type="password" class="newPassWord">
+                        <span></span>
+                    </li>
+                    <li>
+                        <label>确认密码：</label>
+                        <input type="password" class="finalPassWord">
+                        <span></span>
+                    </li>
+                </ul>
+            </div>
             <div class="tab-item" id="tab-three">
-                <table>
+                <table cellspacing="0" cellpadding="0">
                     <tr>
                         <td class="lWidth"><a href="noticeDetails_m.jsp">哒哒哒哒哒哒哒哒哒1111111111</a></td>
                         <td class="rWidth">2015-10-22</td>
@@ -102,7 +120,7 @@
                 </table>
             </div>
             <div class="tab-item" id="tab-four">
-                <table>
+                <table cellspacing="0" cellpadding="0">
                     <tr>
                         <td class="lWidth"><a href="noticeDetails_m.jsp">商品商品商品1111111111</a></td>
                         <td class="rWidth">2015-10-22</td>

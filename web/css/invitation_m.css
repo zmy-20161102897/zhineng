@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form,input,img { margin: 0; padding: 0;}
+li{ list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;
+    font-weight: normal;}
+a{ text-decoration: none;}
+a:hover{ text-decoration: none;}
+body{ font-size: 14px;}
+
+/*最外层*/
+.invitationList{
+    width: 800px;
+    height: auto;
+    min-height: 300px;
+    margin: 0 auto;
+}
+/*搜索样式*/
+.invitationSearch{
+    height: 55px;
+    width: 800px;
+}
+.invitationSearch form{
+    width: 200px;
+    height: 25px;
+    border: black solid 1px;
+    border-radius: 29px;
+    float: right;
+    margin-top: 15px;
+}
+.invitationSearch form .search01{
+    width: 160px;
+    height: 19px;
+    float: left;
+    margin: 4px 0 3px 10px;
+    border: 0;
+    outline: none;
+}
+.invitationSearch form .search02{
+    cursor: pointer;
+    height: 19px;
+    outline: none;
+    margin-top: 2px;
+}
+/*帖子表格*/
+.invitationList table{
+    text-align: center;
+    width: 800px;
+    height: auto;
+}
+.invitationList table tr{
+    height: 40px;
+    line-height: 40px;
+}
+.invitationList table tr .textL{
+    text-align: left;
+}
+.invitationList table tr td{
+    border-bottom: 1px solid #C8C8C8;
+}
+.invitationList table tr td a{
+    color: black;
+}
+.invitationList table tr td a:hover{
+    color: red;
+}
+.invitationList table tr td img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+/*页码样式*/

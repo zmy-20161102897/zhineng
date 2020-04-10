@@ -37,8 +37,8 @@
         <ul>
             <li id="index"><a href="index_m.jsp">首页</a></li>
             <li id="user"><a href="user_m.jsp">用户管理</a></li>
-            <li><a href="develop_m.jsp">发展文章管理</a></li>
-            <li><a href="invitation_m.jsp">论坛管理</a></li>
+            <li id="develop"><a href="develop_m.jsp">发展文章管理</a></li>
+            <li id="invitation"><a href="invitation_m.jsp">论坛管理</a></li>
             <li id="good"><a href="goods_m.jsp">商品管理</a></li>
             <li id="notice"><a href="notice_m.jsp">公告管理</a></li>
         </ul>
@@ -64,6 +64,10 @@
             li = document.getElementById("index").style
         } else if (category === "user_m.jsp") {
             li = document.getElementById("user").style
+        } else if (category === "develop_m.jsp") {
+            li = document.getElementById("develop").style
+        } else if (category === "invitation_m.jsp") {
+            li = document.getElementById("invitation").style
         } else if (category ===  "goods_m.jsp") {
             li = document.getElementById("good").style
         } else if (category === "notice_m.jsp") {

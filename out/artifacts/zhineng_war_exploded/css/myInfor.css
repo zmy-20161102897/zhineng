@@ -14,6 +14,7 @@ body{ font-size: 14px;}
     margin: 40px auto;
     border: 1px solid #e5e5e5;
 }
+
 /*选项卡样式*/
 .tab-block .tab-buttons{
     width: 900px;
@@ -49,6 +50,7 @@ body{ font-size: 14px;}
 .tab-block .tabs .active{
     display: block;
 }
+
 /*个人信息样式*/
 .tabs #tab-one table{
     width: 500px;
@@ -122,51 +124,59 @@ body{ font-size: 14px;}
         opacity: 0;
     }
 }
-/*发布公告样式*/
-.tabs #tab-three table{
+
+/*修改密码样式*/
+.tabs #tab-two{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.tabs #tab-two ul{}
+.tabs #tab-two ul li{
+    height: 30px;
+    margin-bottom: 5px;
+}
+.tabs #tab-two ul li label{
+    color: #999;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    text-align: right;
+    font-size: 16px;
+    line-height: 30px;
+    margin-right: 10px;
+}
+.tabs #tab-two ul li input{
+    outline: none;
+    text-indent: 5px;
+}
+
+
+/*公告和商品样式*/
+.tabs #tab-three table, .tabs #tab-four table{
     width: 700px;
     height: 300px;
     margin: 0 auto;
     padding: 20px 0;
 }
-.tabs #tab-three table tr{
+.tabs #tab-three table tr, .tabs #tab-four table tr{
     height: 30px;
 }
-.tabs #tab-three table tr .lWidth{
+.tabs #tab-three table tr td, .tabs #tab-four table tr td{
+    border-bottom: 1px dashed lightgray;
+}
+.tabs #tab-three table tr .lWidth, .tabs #tab-four table tr .lWidth{
     width: 550px;
     text-align: left;
 }
-.tabs #tab-three table tr .lWidth a{
+.tabs #tab-three table tr .lWidth a, .tabs #tab-four table tr .lWidth a{
     color: black;
 }
-.tabs #tab-three table tr .lWidth a:hover{
+.tabs #tab-three table tr .lWidth a:hover, .tabs #tab-four table tr .lWidth a:hover{
     color: red;
 }
-.tabs #tab-three table tr .rWidth{
-    width: 150px;
-    text-align: center;
-}
-/*商品样式*/
-.tabs #tab-four table{
-    width: 700px;
-    height: 300px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-.tabs #tab-four table tr{
-    height: 30px;
-}
-.tabs #tab-four table tr .lWidth{
-    width: 550px;
-    text-align: left;
-}
-.tabs #tab-four table tr .lWidth a{
-    color: black;
-}
-.tabs #tab-four table tr .lWidth a:hover{
-    color: red;
-}
-.tabs #tab-four table tr .rWidth{
+.tabs #tab-three table tr .rWidth, .tabs #tab-four table tr .rWidth{
     width: 150px;
     text-align: center;
 }
