@@ -48,7 +48,7 @@
 
     %>
     <div class="noticeContent">
-        <h5 id="noticeTitle">公告标题：<%=tnotice.getFullNoticeTitle()%></h5>
+        <h5 id="noticeTitle"><%=tnotice.getFullNoticeTitle()%></h5>
         <h6 id="noticeDate">发布时间：<%=tnotice.getNoticeDate()%></h6>
         <div class="noticeText">
             <p style="text-indent:0em; text-align:justify; line-height:2em;" id="noticeText"><%=tnotice.getNoticeText()%></div>

@@ -18,7 +18,7 @@
         <form action="addNotice.jsp" method="post">
             <div class="noticeTitle">
                 <span>标题：</span>
-                <input type="text" name="title" required/>
+                <input type="text" name="title" required onkeyup="noticeTitleLength(this)"/>
             </div>
             <div class="noticeText">
                 <span>正文：</span>
@@ -30,5 +30,18 @@
             </div>
         </form>
     </div>
+
+    <script type="text/javascript">
+        function noticeTitleLength(which) {
+            var maxChars = 30; //
+            if(which.value.length > maxChars){
+                alert("最多输入30个字!");
+                // 超过限制的字数了就将 文本框中的内容按规定的字数 截取 从第一个字符开始到上限
+                which.value = which.value.substring(0,maxChars);
+                return false;
+            }
+        }
+    </script>
+
 </body>
 </html>

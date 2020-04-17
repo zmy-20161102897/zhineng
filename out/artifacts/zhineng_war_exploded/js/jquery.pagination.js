@@ -9,17 +9,17 @@
  */
 jQuery.fn.pagination = function (maxentries, opts) {
     opts = jQuery.extend({
-        items_per_page: 10,
-        num_display_entries: 10,
-        current_page: 0,
-        num_edge_entries: 0,
-        link_to: "#",
-        prev_text: "Prev",
+        items_per_page: 10,//每页显示的条目数
+        num_display_entries: 10,//连续分页主体部分显示的分页条目数
+        current_page: 0,//当前选中的页面 
+        num_edge_entries: 0,//两侧显示的首尾分页的条目数
+        link_to: "#",//分页的链接
+        prev_text: "Prev",//“前一页”分页按钮上显示的文字
         next_text: "Next",
-        ellipse_text: "...",
-        prev_show_always: true,
+        ellipse_text: "...",//省略的页数用什么文字表示
+        prev_show_always: true,//是否显示“前一页”分页按钮
         next_show_always: true,
-        callback: function () {
+        callback: function () {//回调函数
             return false;
         }
     }, opts || {});

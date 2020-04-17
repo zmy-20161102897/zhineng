@@ -11,7 +11,6 @@
     <title>添加商品</title>
     <link rel="stylesheet" type="text/css" href="css/goodsAdd_m.css">
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/introPic.js"></script>
 </head>
 <body>
 <jsp:include page="head_m.jsp" flush="true"/>

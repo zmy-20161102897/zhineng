@@ -3,6 +3,9 @@
 <%@ page import="service.AdminService" %>
 <%@ page import="service.NoticeService" %>
 <%@ page import="java.util.List" %>
+<%@ page import="bean.Tgoods" %>
+<%@ page import="service.GoodsService" %>
+<%@ page import="com.mysql.cj.x.protobuf.MysqlxDatatypes" %>
 <%--
   Created by IntelliJ IDEA.
   User: 44137
@@ -24,6 +27,7 @@
     String showChangeHeadImgButton;
     Tadmin checkAdmin;
     String noticeShow;
+    String goodsShow;
 %>
 <%
     int curAdminId = Integer.parseInt(request.getParameter("adminID"));
@@ -106,6 +110,29 @@
         </table>
     </div>
     <!--发布的公告结束-->
+    <!--发布的商品开始-->
+    <div class="title3"><span>发&nbsp;&nbsp;布&nbsp;&nbsp;商&nbsp;&nbsp;品</span></div>
+    <%
+        List<Tgoods> goodsList = new GoodsService().queryGoodsByAdminId(curAdminId);
+
+        StringBuilder goodsShowBuilder = new StringBuilder();
+        for (Tgoods tgoods : goodsList) {
+            goodsShowBuilder.append("<tr><td width=\"600\"><a href=\"goodsDetails_m.jsp?goodsID=?");
+            goodsShowBuilder.append(tgoods.getGoodsId());
+            goodsShowBuilder.append("\">");
+            goodsShowBuilder.append(tgoods.getGoodsName());
+            goodsShowBuilder.append("</a></td><td width=\"200\" class=\"textC myGoodsPrice\">");
+            goodsShowBuilder.append(tgoods.getGoodsPrice());
+            goodsShowBuilder.append("</td></tr>");
+        }
+        goodsShow = goodsShowBuilder.toString();
+    %>
+    <div class="myGoods">
+        <table border="0" cellspacing="0" cellpadding="0" id="myGoods"><%=goodsShow%>
+        </table>
+    </div>
+
+    <!--发布的商品结束-->
 </div>
 </body>
 
@@ -140,6 +167,13 @@
         var headImg = document.getElementById("btn_file")
         headImg.click()
     }
+
+    $(".myGoodsPrice").each(function (i, el) {
+        var td = parseFloat($(el).text());
+        if (!isNaN(td)) {
+            $(el).text(td.toFixed(2));
+        }
+    });
 
 </script>
 

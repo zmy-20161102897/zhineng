@@ -72,7 +72,7 @@ public class NoticeDao {
     }
 
     public int findLastNoticeId(int noticeId) {
-        String sql = "SELECT MIN(noticeID) FROM tnotice WHERE noticeID > ?";
+        String sql = "SELECT MAX(noticeID) FROM tnotice WHERE noticeID < ?";
         try {
             return jdbcTemplate.queryForObject(sql, Integer.class, noticeId);
         } catch (Exception e) {
@@ -82,7 +82,7 @@ public class NoticeDao {
     }
 
     public int findNextNoticeId(int noticeId) {
-        String sql = "SELECT MAX(noticeID) FROM tnotice WHERE noticeID < ?";
+        String sql = "SELECT MIN(noticeID) FROM tnotice WHERE noticeID > ?";
         try {
             return jdbcTemplate.queryForObject(sql, Integer.class, noticeId);
         } catch (Exception e) {
@@ -111,13 +111,4 @@ public class NoticeDao {
         }
     }
 
-    public List<String> queryNoticeTitleByTerm(String term) {
-        String sql = "SELECT LEFT(noticetitle,50) FROM tnotice WHERE noticeTitle LIKE ? LIMIT 0,6";
-        try {
-            return jdbcTemplate.queryForList(sql, String.class, "%" + term + "%");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 }

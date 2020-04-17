@@ -15,33 +15,6 @@ body{ font-size: 14px;}
     min-height: 300px;
     margin: 0 auto;
 }
-/*搜索样式*/
-.invitationSearch{
-    height: 55px;
-    width: 800px;
-}
-.invitationSearch form{
-    width: 200px;
-    height: 25px;
-    border: black solid 1px;
-    border-radius: 29px;
-    float: right;
-    margin-top: 15px;
-}
-.invitationSearch form .search01{
-    width: 160px;
-    height: 19px;
-    float: left;
-    margin: 4px 0 3px 10px;
-    border: 0;
-    outline: none;
-}
-.invitationSearch form .search02{
-    cursor: pointer;
-    height: 19px;
-    outline: none;
-    margin-top: 2px;
-}
 /*帖子表格*/
 .invitationList table{
     text-align: center;
@@ -64,9 +37,58 @@ body{ font-size: 14px;}
 .invitationList table tr td a:hover{
     color: red;
 }
-.invitationList table tr td img{
+.invitationList table tr td input{
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
-/*页码样式*/
+.invitationList table .tableHeight{
+    height: 60px;
+    line-height: 60px;
+}
+/*搜索框样式*/
+.invitationSearch {
+    height: 55px;
+    width: 800px;
+    margin: 0 auto;
+}
+.invitationSearch form {
+    width: 200px;
+    height: 25px;
+    border: black solid 1px;
+    border-radius: 29px;
+    float: right;
+    margin-top: 15px;
+}
+.invitationSearch form .search01 {
+    width: 160px;
+    height: 19px;
+    float: left;
+    margin: 4px 0 3px 10px;
+    border: 0;
+    outline: none;
+}
+.invitationSearch form .search02 {
+    cursor: pointer;
+    width: 20px;
+    height: 19px;
+    outline: none;
+}
+/*!*页码样式*!*/
+/*.invitationPage{*/
+/*    text-align: center;*/
+/*    padding-top: 30px;*/
+/*    padding-bottom: 50px;*/
+/*}*/
+/*.invitationPage span{*/
+/*    color: gray;*/
+/*}*/
+/*.invitationPage a{*/
+/*    color: black;*/
+/*}*/
+/*.invitationPage a, .invitationPage span{*/
+/*    cursor: pointer;*/
+/*    margin-left: 10px;*/
+/*    border: 1px solid black;*/
+/*    padding: 10px;*/
+/*}*/

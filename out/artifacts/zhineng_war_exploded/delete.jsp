@@ -1,6 +1,7 @@
 <%@ page import="service.NoticeService" %>
 <%@ page import="service.UserService" %>
 <%@ page import="service.GoodsService" %>
+<%@ page import="service.MessageService" %>
 <%--
   Created by IntelliJ IDEA.
   User: MACHENIKE
@@ -17,12 +18,21 @@
         response.sendRedirect("notice_m.jsp");
     } else if ("user".equals(type)) {
         int userId = Integer.parseInt(request.getParameter("userID"));
+        int deleteMessage = new MessageService().deleteMessageByUserID(userId);
         int delete = new UserService().deleteUser(userId);
         response.sendRedirect("user_m.jsp");
     } else if ("goods".equals(type)) {
         int goodsID = Integer.parseInt(request.getParameter("goodsID"));
         int delete = new GoodsService().deleteGoods(goodsID);
         response.sendRedirect("goods_m.jsp");
+    } else if ("message".equals(type)) {
+        int mesID = Integer.parseInt(request.getParameter("mesID"));
+        int delete = new MessageService().deleteMessage(mesID);
+        response.sendRedirect("invitation_m.jsp");
+    } else if ("developMessage".equals(type)) {
+        int mesID = Integer.parseInt(request.getParameter("mesID"));
+        int delete = new MessageService().deleteMessage(mesID);
+        response.sendRedirect("develop_m.jsp");
     }
 %>
 <html>

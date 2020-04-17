@@ -62,13 +62,13 @@ body{ font-size: 14px;}
 }
 /*表格样式*/
 .develop-item table{
-    width: 700px;
+    width: 850px;
     margin: 0 auto;
     padding: 20px 0 0 0;
 }
 .develop-item table tr{
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
 }
 .develop-item table tr a{
     color: black;
@@ -79,7 +79,7 @@ body{ font-size: 14px;}
 .develop-item table tr td{
     text-align: center;
 }
-.develop-item table tr td img{
+.develop-item table tr td input{
     height: 20px;
     width: 20px;
     cursor: pointer;
@@ -87,3 +87,50 @@ body{ font-size: 14px;}
 .develop-item table .textL{
     text-align: left;
 }
+/*页码样式开始*/
+.developPage{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.developPage span{
+    color: gray;
+}
+.developPage a{
+    color: black;
+}
+.developPage a, .developPage span{
+    cursor: pointer;
+    margin-left: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+/*搜索框样式*/
+.developSearch {
+    height: 55px;
+    width: 850px;
+    margin: 0 auto;
+}
+.developSearch form {
+    width: 200px;
+    height: 25px;
+    border: black solid 1px;
+    border-radius: 29px;
+    float: right;
+    margin-top: 15px;
+}
+.developSearch form .search01 {
+    width: 160px;
+    height: 19px;
+    float: left;
+    margin: 4px 0 3px 10px;
+    border: 0;
+    outline: none;
+}
+.developSearch form .search02 {
+    cursor: pointer;
+    width: 20px;
+    height: 19px;
+    outline: none;
+}
+

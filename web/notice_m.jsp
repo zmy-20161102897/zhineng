@@ -59,10 +59,11 @@
     $(function () {
         noticeStr =
         <%=JSON.toJSONString(noticeList)%>
+        console.log(noticeStr)
         var noticesArray = $.map(<%=JSON.toJSONString(noticeMap)%>, function (value, key) {
             return {value: value, data: key};
         });
-
+        console.log(noticesArray)
         pagiantion(noticeStr, 6)
         search(noticesArray)
     })
@@ -97,7 +98,7 @@
             "                <th width=\"120\">删除公告</th>\n" +
             "            </tr>"
         for (var tnotice of noticeStr) {
-            if (tnotice.noticeId = noticeId) {
+            if (tnotice.noticeId == noticeId) {
                 html += getNoticeHtml(tnotice)
                 $("#allAdminNotice").html(html)
                 $("#pageLine").hide()

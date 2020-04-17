@@ -8,8 +8,19 @@ public class Tmessage {
   private String mesText;
   private String mesPhoto;
   private java.sql.Date mesDate;
-  private long userIid;
+  private long userId;
+  private long cid;
+  private long zancount;
+  private String userName;
+  private String cname;
 
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 
   public long getMesId() {
     return mesId;
@@ -20,8 +31,12 @@ public class Tmessage {
   }
 
 
-  public String getMesSubject() {
-    return mesSubject;
+  public String getMesSubject(int length) {
+      if (mesSubject.length() < length) {
+        return mesSubject;
+      } else {
+        return mesSubject.substring(0,length) + " ...";
+      }
   }
 
   public void setMesSubject(String mesSubject) {
@@ -56,12 +71,37 @@ public class Tmessage {
   }
 
 
-  public long getUserIid() {
-    return userIid;
+  public long getUserId() {
+    return userId;
   }
 
-  public void setUserIid(long userIid) {
-    this.userIid = userIid;
+  public void setUserId(long userId) {
+    this.userId = userId;
+  }
+
+
+  public long getCid() {
+    return cid;
+  }
+
+  public void setCid(long cid) {
+    this.cid = cid;
+  }
+
+  public void setCname(String cname) {
+    this.cname = cname;
+  }
+
+  public long getZancount() {
+    return zancount;
+  }
+
+  public void setZancount(long zancount) {
+    this.zancount = zancount;
+  }
+
+  public String getFullMessageSubject() {
+    return mesSubject;
   }
 
 }

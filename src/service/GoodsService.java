@@ -1,6 +1,7 @@
 package service;
 
 import bean.Tgoods;
+import bean.Tnotice;
 import dao.GoodsDao;
 
 import java.util.List;
@@ -14,5 +15,9 @@ public class GoodsService {
 
     public int deleteGoods(int goodsId) {
         return goodsDao.deleteGoods(goodsId);
+    }
+
+    public List<Tgoods> queryGoodsByAdminId(int adminId) {
+        return goodsDao.queryGoodsByAdminId(adminId);
     }
 }

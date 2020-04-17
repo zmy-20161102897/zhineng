@@ -16,13 +16,6 @@
     <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 </head>
 <body>
-<ul>
-    <li><a href="index.html"><strong>首&nbsp;&nbsp;页</strong></a></li>
-    <li><a href="fazhan.html"><strong>发&nbsp;&nbsp;展</strong></a></li>
-    <li><a href="luntan.html"><strong>论&nbsp;&nbsp;坛</strong></a></li>
-    <li><a href="shopping.html"><strong>购&nbsp;&nbsp;物</strong></a></li>
-    <li><a href="#"><strong>个人中心</strong></a></li>
-</ul>
 
 <div class="denglu">
     <div class="userLogin"><strong>登录</strong></div>

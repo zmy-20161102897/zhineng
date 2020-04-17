@@ -16,14 +16,17 @@ body{ font-size: 14px;}
     height:30px;
     background:#FFDFBF;
     margin-top: 20px;}
-.title2{ width:850px;
+.title2, .title3{ width:850px;
     height:30px;
     background:#FFDFBF;}
+.title3{
+    margin-top: 20px;
+}
 .title1 span{ font-size:16px;
     font-weight:bold;
     line-height:30px;
     margin-left:20px;}
-.title2 span{ font-size:16px;
+.title2 span, .title3 span{ font-size:16px;
     font-weight:bold;
     line-height:30px;
     margin-left:20px;}
@@ -47,3 +50,9 @@ td{ border-bottom-width: 1px;
 .myNotice table td a:hover{ color:red;}
 /*修改头像按钮样式*/
 button{ cursor: pointer;}
+/*发布公告表格样式*/
+.myGoods table{ margin-left:25px;
+margin-bottom: 50px;}
+.textC{ text-align:center;}
+.myGoods table td a{ color:black;}
+.myGoods table td a:hover{ color:red;}

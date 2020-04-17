@@ -65,6 +65,8 @@
         // console.log(goodArray)
 
         pagiantion(goodsStr, 3)
+
+
         search(goodArray)
 
         $("td").each(function (i, el) {

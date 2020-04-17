@@ -84,7 +84,7 @@
             "            <th width=\"160\">联系电话</th>\n" +
             "            <th width=\"190\">电子邮箱</th>\n" +
             // "            <th width=\"90\">详&nbsp;&nbsp;情</th>\n" +
-            "            <th width=\"90\">留&nbsp;&nbsp;言</th>\n" +
+            "            <th width=\"90\"></th>\n" +
             "        </tr>"
         for (var tadmin of admins) {
             html += getAdminHtml(tadmin)
@@ -101,10 +101,10 @@
             "            <th width=\"160\">联系电话</th>\n" +
             "            <th width=\"190\">电子邮箱</th>\n" +
             // "            <th width=\"90\">详&nbsp;&nbsp;情</th>\n" +
-            "            <th width=\"90\">留&nbsp;&nbsp;言</th>\n" +
+            "            <th width=\"90\"></th>\n" +
             "        </tr>"
         for (var tadmin of adminStr) {
-            if (tadmin.adminId = adminId) {
+            if (tadmin.adminId == adminId) {
                 html += getAdminHtml(tadmin)
                 $("#allAdmin").html(html)
                 $("#pageLine").hide()
@@ -122,7 +122,8 @@
             "            <td width=\"160\">" + tadmin.adminMobile + "</td>\n" +
             "            <td width=\"190\">" + tadmin.adminEmail + "</td>\n" +
             // "            <td width=\"90\"><a onclick='findAdmin(" + tadmin.adminId + ")'>详&nbsp;&nbsp;情</a></td>\n" +
-            "            <td width=\"90\">留&nbsp;&nbsp;言</td>\n" +
+            "            <td width=\"90\"></td>\n" +
+            //    留&nbsp;&nbsp;言
             "        </tr>"
     }
 

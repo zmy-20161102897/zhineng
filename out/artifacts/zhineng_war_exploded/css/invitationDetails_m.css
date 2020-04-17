@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form,input,img { margin: 0; padding: 0;}
+li{ list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;
+    font-weight: normal;}
+a{ text-decoration: none;}
+a:hover{ text-decoration: none;}
+body{ font-size: 14px;}
+
+.invitationContent{
+    width: 900px;
+    height: auto;
+    margin: 40px auto;
+    min-height: 500px;
+}
+/*标题样式*/
+.invitationContent h1{
+    display: block;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 18px;
+    text-align: center;
+}
+/*时间和回复样式*/
+.invitationContent .invitationInfo{
+    text-align: center;
+    color: #999;
+    margin-bottom: 10px;
+}
+/*主贴内容样式*/
+.mesMainContent{
+    padding: 10px 20px;
+    background: #fafafa;
+    margin-bottom: 20px;
+}
+.mesMainContent h5{
+    display: block;
+    text-align: right;
+    color: #999;
+    margin-top: 10px;
+}

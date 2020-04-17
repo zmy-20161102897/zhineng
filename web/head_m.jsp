@@ -37,7 +37,7 @@
         <ul>
             <li id="index"><a href="index_m.jsp">首页</a></li>
             <li id="user"><a href="user_m.jsp">用户管理</a></li>
-            <li id="develop"><a href="develop_m.jsp">发展文章管理</a></li>
+            <li id="develop"><a href="develop_m.jsp">文章管理</a></li>
             <li id="invitation"><a href="invitation_m.jsp">论坛管理</a></li>
             <li id="good"><a href="goods_m.jsp">商品管理</a></li>
             <li id="notice"><a href="notice_m.jsp">公告管理</a></li>

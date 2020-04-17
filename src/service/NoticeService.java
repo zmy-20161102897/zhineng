@@ -38,7 +38,4 @@ public class NoticeService {
         return noticeDao.insertNotice(title,text,adminId,date);
     }
 
-    public List<String> queryNoticeTitleByTerm(String term) {
-        return noticeDao.queryNoticeTitleByTerm(term);
-    }
 }

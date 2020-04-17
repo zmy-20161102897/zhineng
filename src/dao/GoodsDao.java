@@ -1,6 +1,7 @@
 package dao;
 
 import bean.Tgoods;
+import bean.Tnotice;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import utils.C3p0Utils;
@@ -52,6 +53,16 @@ public class GoodsDao {
         } catch (Exception e) {
             e.printStackTrace();
             return -1;
+        }
+    }
+
+    public List<Tgoods> queryGoodsByAdminId(int adminId) {
+        String sql = "SELECT * FROM tgoods WHERE adminID = ?";
+        try {
+            return jdbcTemplate.query(sql, goodsShowRowMapper, adminId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }

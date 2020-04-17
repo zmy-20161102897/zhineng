@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, p, h1, h2, h3, h4, h5, h6, form,input,img { margin: 0; padding: 0;}
+body{
+    background: #fafafa;
+}
+li{ list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;
+    font-weight: normal;}
+a{ text-decoration: none;}
+a:hover{ text-decoration: none;}
+body{ font-size: 14px;}
+
+.developContent{
+    width: 900px;
+    height: auto;
+    margin: 40px auto;
+    background: white;
+}
+.developContent h5{
+    text-align: center;
+    font-size: 17px;
+    color: #444444;
+    font-weight: bold;
+    line-height: 60px;
+}
+.developMesText{
+    height: auto;
+    width: 850px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+.developElse{
+    width: 850px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+}
+.developElse h6{
+    width: 750px;
+}
+.developElse .developZanCount{
+    width: 100px;
+    line-height: 20px;
+    text-align: center;
+}
+.developElse .developZanCount img{
+    width: 20px;
+    height: 20px;
+}
+

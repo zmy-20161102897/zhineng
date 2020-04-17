@@ -34,8 +34,8 @@ td{ border-bottom-width: 1px;
     font-weight:bold;}
 .textL{ text-align:left;}
 /*发布文章表格样式*/
-.article table{ margin-top:10px;
+.article table, .invitation table{ margin-top:10px;
     margin-left:25px;}
 .textC{ text-align:center;}
-.article table td a{ color:black;}
-.article table td a:hover{ color:red;}
+.article table td a, .invitation table td a{ color:black;}
+.article table td a:hover, .invitation table td a:hover{ color:red;}
