@@ -1,6 +1,6 @@
-<%@ page import="bean.Tadmin" %>
+<%@ page import="bean.Tuser" %>
 <%@ page import="bean.Tnotice" %>
-<%@ page import="service.AdminService" %>
+<%@ page import="service.UserService" %>
 <%@ page import="service.NoticeService" %>
 <%@ page import="java.util.List" %>
 <%@ page import="bean.Tgoods" %>
@@ -25,14 +25,14 @@
 <jsp:include page="head_m.jsp" flush="true"/>
 <%!
     String showChangeHeadImgButton;
-    Tadmin checkAdmin;
+    Tuser checkAdmin;
     String noticeShow;
     String goodsShow;
 %>
 <%
     int curAdminId = Integer.parseInt(request.getParameter("adminID"));
-    Tadmin tadmin = (Tadmin) request.getSession().getAttribute("admin");
-    if (curAdminId == tadmin.getAdminId()) {
+    Tuser tuser = (Tuser) request.getSession().getAttribute("user");
+    if (curAdminId == tuser.getUserId()) {
         showChangeHeadImgButton = "<tr id=\"changeHeadImg\">\n" +
                 "                <td width=\"120\" style=\"border-bottom-style: none;text-align: center\">\n" +
                 "                    <input type=\"file\" style=\"display: none\" id=\"btn_file\">\n" +
@@ -51,7 +51,8 @@
                 "            </tr>";
     }
 
-    checkAdmin = new AdminService().queryAdminById(curAdminId);
+    checkAdmin = new UserService().queryAdminById(curAdminId);
+    System.out.println(checkAdmin.getUserName());
 %>
 <div class="myBox">
     <div class="title1"><span>管&nbsp;&nbsp;理&nbsp;&nbsp;员&nbsp;&nbsp;信&nbsp;&nbsp;息</span></div>
@@ -59,29 +60,28 @@
     <div class="myMsg">
         <table border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <th rowspan="3" width="200" id="adminHeadImg"><img src='img/admin/<%=checkAdmin.getAdminId()%>.png'
-                                                                   id="headImg"></th>
+                <th rowspan="3" width="200" id="adminHeadImg"><img src='img/user/<%=checkAdmin.getUserId()%>.png' id="headImg"></th>
                 <td width="120" class="textR">昵&nbsp;&nbsp;称：&nbsp;</td>
-                <td width="200" class="textL" id="adminName"><%=checkAdmin.getAdminName()%>
+                <td width="200" class="textL" id="adminName"><%=checkAdmin.getUserName()%>
                 </td>
                 <td width="120" class="textR">性&nbsp;&nbsp;别：&nbsp;</td>
-                <td width="180" class="textL" id="adminSex"><%=checkAdmin.getAdminSex()%>
+                <td width="180" class="textL" id="adminSex"><%=checkAdmin.getUserSex()%>
                 </td>
             </tr>
             <tr>
                 <td width="120" class="textR">生&nbsp;&nbsp;日：&nbsp;</td>
-                <td width="200" class="textL" id="adminBirthday"><%=checkAdmin.getAdminBirthday()%>
+                <td width="200" class="textL" id="adminBirthday"><%=checkAdmin.getUserBirthday()%>
                 </td>
                 <td width="120" class="textR">联系方式：&nbsp;</td>
-                <td width="180" class="textL" id="adminMobile"><%=checkAdmin.getAdminMobile()%>
+                <td width="180" class="textL" id="adminMobile"><%=checkAdmin.getUserMobile()%>
                 </td>
             </tr>
             <tr>
                 <td width="120" class="textR">住&nbsp;&nbsp;址：&nbsp;</td>
-                <td width="200" class="textL" id="adminAddress"><%=checkAdmin.getAdminAddress()%>
+                <td width="200" class="textL" id="adminAddress"><%=checkAdmin.getUserAddress()%>
                 </td>
                 <td width="120" class="textR">邮箱地址：&nbsp;</td>
-                <td width="180" class="textL" id="adminEmail"><%=checkAdmin.getAdminEmail()%>
+                <td width="180" class="textL" id="adminEmail"><%=checkAdmin.getUserEmail()%>
                 </td>
             </tr>
             <%=showChangeHeadImgButton%>
@@ -106,8 +106,7 @@
         noticeShow = noticeShowBuilder.toString();
     %>
     <div class="myNotice">
-        <table border="0" cellspacing="0" cellpadding="0" id="allNotice"><%=noticeShow%>
-        </table>
+        <table border="0" cellspacing="0" cellpadding="0" id="allNotice"><%=noticeShow%></table>
     </div>
     <!--发布的公告结束-->
     <!--发布的商品开始-->
@@ -152,7 +151,7 @@
                         alert("修改成功")
 
                         $.post("updateHeadImg.jsp", {
-                            adminID:${sessionScope.admin.adminId},
+                            userID:${sessionScope.user.userId},
                             file_data: this.result.split(",")[1]
                         }, "json")
                     }

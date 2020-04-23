@@ -1,12 +1,10 @@
 package bean;
 
-
 public class Tmessage {
 
   private long mesId;
   private String mesSubject;
   private String mesText;
-  private String mesPhoto;
   private java.sql.Date mesDate;
   private long userId;
   private long cid;
@@ -51,16 +49,6 @@ public class Tmessage {
   public void setMesText(String mesText) {
     this.mesText = mesText;
   }
-
-
-  public String getMesPhoto() {
-    return mesPhoto;
-  }
-
-  public void setMesPhoto(String mesPhoto) {
-    this.mesPhoto = mesPhoto;
-  }
-
 
   public java.sql.Date getMesDate() {
     return mesDate;

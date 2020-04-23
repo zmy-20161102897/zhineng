@@ -1,5 +1,5 @@
 <%@ page import="service.NoticeService" %>
-<%@ page import="bean.Tadmin" %>
+<%@ page import="bean.Tuser" %>
 <%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: MACHENIKE
@@ -16,8 +16,8 @@
 
     System.out.println(title + "\n" + text);
 
-    Tadmin tadmin = (Tadmin) request.getSession().getAttribute("admin");
-    int insert = new NoticeService().insertNotice(title,text,tadmin.getAdminId(),new Date());
+    Tuser tuser = (Tuser) request.getSession().getAttribute("user");
+    int insert = new NoticeService().insertNotice(title,text,tuser.getUserId(),new Date());
 
     response.sendRedirect("notice_m.jsp");
 %>

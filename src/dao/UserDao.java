@@ -26,12 +26,57 @@ public class UserDao {
             tuser.setUserAddress(resultSet.getString(7));
             tuser.setUserMobile(resultSet.getString(8));
             tuser.setUserPic(resultSet.getString(9));
+            tuser.setStatus(resultSet.getInt(10));
             return tuser;
         }
     };
 
+    //管理员登录
+    public Tuser login(String userName, String password) {
+        String sql = "SELECT * FROM tuser WHERE userName = ? and userPassword = ? AND status = 1";
+        try {
+            return jdbcTemplate.queryForObject(sql, userRowMapper, userName, password);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    //查询所有管理员
+    public List<Tuser> queryAllAdmin() {
+        String sql = "SELECT * FROM tuser WHERE status = 1";
+        try {
+            return jdbcTemplate.query(sql, userRowMapper);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    //管理员详细信息
+    public Tuser queryAdminById(int userId) {
+        String sql = "SELECT * FROM tuser WHERE userID = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, userRowMapper, userId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    //管理员头像
+    public int updateHeadImg(int userId, String headImgData) {
+        String sql = "UPDATE tuser SET userPic = ? WHERE userID = ? AND status = 1";
+        try {
+            return jdbcTemplate.update(sql,headImgData,userId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
     public List<Tuser> queryAllUsers() {
-        String sql = "SELECT * FROM tuser";
+        String sql = "SELECT * FROM tuser WHERE status = 0";
         try {
             return jdbcTemplate.query(sql,userRowMapper);
         } catch (Exception e) {

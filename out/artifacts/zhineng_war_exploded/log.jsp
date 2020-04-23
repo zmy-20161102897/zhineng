@@ -1,5 +1,5 @@
-<%@ page import="bean.Tadmin" %>
-<%@ page import="service.AdminService" %><%--
+<%@ page import="bean.Tuser" %>
+<%@ page import="service.UserService" %><%--
   Created by IntelliJ IDEA.
   User: MACHENIKE
   Date: 2020/3/23
@@ -12,9 +12,9 @@
     String name = request.getParameter("username");
     String password = request.getParameter("password");
 
-    Tadmin admin = new AdminService().login(name, password);
-    if (admin != null) {
-        request.getSession().setAttribute("admin", admin);
+    Tuser user = new UserService().login(name, password);
+    if (user != null) {
+        request.getSession().setAttribute("user", user);
         response.sendRedirect("index_m.jsp");
 
     } else {

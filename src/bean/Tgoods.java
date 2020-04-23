@@ -10,7 +10,7 @@ public class Tgoods {
     private String goodsName;
     private double goodsPrice;
     private String goodsText;
-    private long adminId;
+    private long userId;
     private String coverImg1;
     private String coverImg2;
     private String coverImg3;
@@ -58,12 +58,12 @@ public class Tgoods {
     }
 
 
-    public long getAdminId() {
-        return adminId;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setAdminId(long adminId) {
-        this.adminId = adminId;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
 

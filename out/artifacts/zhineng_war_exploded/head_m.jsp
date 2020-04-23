@@ -22,7 +22,7 @@
     <div class="top">
         <img src="img/smart.png" alt="欢迎使用"/>
         <div class="manageName" id="manageName">
-            <a href="information_m.jsp?adminID=${sessionScope.admin.adminId}">欢迎您,${sessionScope.admin.adminName}</a>
+            <a href="information_m.jsp?adminID=${sessionScope.user.userId}">欢迎您,${sessionScope.user.userName}</a>
             <button onclick="window.location.href='login.jsp'">退出</button>
         </div>
         <div class="manageName" id="noAdmin">
@@ -50,7 +50,7 @@
 <script>
 
     $(function () {
-        if ("${sessionScope.admin.adminName}" === "") {
+        if ("${sessionScope.user.userName}" === "") {
             $("#manageName").hide()
             $("#noAdmin").show()
         } else {

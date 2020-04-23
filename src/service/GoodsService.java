@@ -17,7 +17,7 @@ public class GoodsService {
         return goodsDao.deleteGoods(goodsId);
     }
 
-    public List<Tgoods> queryGoodsByAdminId(int adminId) {
-        return goodsDao.queryGoodsByAdminId(adminId);
+    public List<Tgoods> queryGoodsByAdminId(int userId) {
+        return goodsDao.queryGoodsByAdminId(userId);
     }
 }

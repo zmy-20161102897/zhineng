@@ -1,5 +1,10 @@
 <%@ page import="bean.Tmessage" %>
-<%@ page import="service.MessageService" %><%--
+<%@ page import="bean.Tuser" %>
+<%@ page import="bean.Tcomment" %>
+<%@ page import="service.MessageService" %>
+<%@ page import="service.CommentService" %>
+<%@ page import="service.UserService" %>
+<%--
   Created by IntelliJ IDEA.
   User: 44137
   Date: 2020/4/15
@@ -16,44 +21,74 @@
 </head>
 <body>
     <jsp:include page="head_m.jsp" flush="true"/>
-    <%!
-        String formatInvitationText(String text) {
-
-            return null;
-        }
-    %>
     <%
         MessageService messageService = new MessageService();
         int mesId = Integer.parseInt(request.getParameter("mesID"));
         Tmessage tmessage = messageService.queryMessageByMesId(mesId);
+        Tuser tuser = new UserService().queryUserById((int) tmessage.getUserId());
     %>
-    <div class="invitationContent">
-        <h1>此处显示帖子名</h1>
-        <div class="invitationInfo">
-            <span>时间：2019-12-08</span>
-            <span>回复：300</span>
-        </div>
-        <!--主贴内容开始-->
-        <div class="mesMainContent">
-            本人从事智能家居场景设计工作，发现很多人对智能家居完全不了解，一说智能家居，很多人都以为是做家具的。所以决定说说什么是智能家居。
-            我将用你看的懂的方式来摆谈！想先发个视频预热的，为什么传不了??
-            <h5>楼主发言：33次</h5>
-        </div>
-        <!--主贴内容结束-->
-        <!--回复内容开始-->
-        <div class="replyBox">
-            <!--对主贴的评论开始-->
-            <div>
-
+    <div class="container">
+        <!--标题及回复数开始-->
+        <h3 class="invitation-title"><%=tmessage.getFullMessageSubject()%></h3>
+        <!--标题及回复数结束-->
+        <!--主贴开始-->
+        <div class="main-invitation">
+            <!--头像和昵称开始-->
+            <div class="initiator">
+                <img class="initiator-img" src='img/user/<%=tuser.getUserId()%>.png'>
+                <a class="initiator-name" href="userDetails_m.jsp" target="_blank"><%=tuser.getUserName()%></a>
             </div>
-            <!--对主贴的评论结束-->
-            <!--对评论的评论开始-->
-            <div>
-
+            <!--头像和昵称结束-->
+            <!--主贴内容开始-->
+            <div class="invitation-content">
+                <p style="text-indent: 2em"><%=tmessage.getMesText()%></p>
+                <div class="invitation-else">
+                    <span class="invitation-date"><%=tmessage.getMesDate()%></span>
+                    <span class="reply-number">回复数：15558</span>
+                </div>
             </div>
-            <!--对评论的评论结束-->
+            <!--主贴内容结束-->
         </div>
-        <!--回复内容结束-->
+        <!--主贴结束-->
+        <!--回复开始-->
+        <div class="answer-invitation">
+            <!--头像和昵称开始-->
+            <div class="answerer">
+                <img class="answerer-img" src="img/user.png">
+                <a class="answerer-name" href="userDetails_m.jsp" target="_blank">用户昵称用户昵称用户</a>
+            </div>
+            <!--头像和昵称结束-->
+            <!--回复内容开始-->
+            <div class="answer-content">
+                <p style="text-indent: 2em">智能家居是以住宅为平台， 利用技术将家居生活有关的设施集成</p>
+                <div class="answer-else">
+                    <span class="answer-date">2020-03-27&nbsp;12:20:18</span>
+                    <div class="check-comment">
+                        <a class="check-all-comment" href="#">所有评论</a>
+                    </div>
+                    <a class="delete-answer">删除</a>
+                </div>
+                <!--评论开始-->
+                <div class="all-comment">
+                    <ul>
+                        <li>
+                            <img src="img/user.png">
+                            <div class="comment-content">
+                                <a class="comment-user-name" href="userDetails_m.jsp">此处显示用户名aaaa&nbsp;&nbsp;</a>
+                                <span>此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容</span>
+                                <div class="comment-else">
+                                    <span class="comment-date">2020-04-08&nbsp;15:03:15</span>
+                                    <a href="#">删除</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--评论结束-->
+            </div>
+            <!--回复内容结束-->
+        </div>
+        <!--回复结束-->
     </div>
 
 </body>

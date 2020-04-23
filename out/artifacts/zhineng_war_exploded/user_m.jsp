@@ -57,6 +57,7 @@
     $(function () {
         userStr =
         <%=JSON.toJSONString(userList)%>
+        //console.log(userStr);
 
         var userArray = $.map(<%=JSON.toJSONString(userMap)%>, function (value, key) {
             return {value: value, data: key}
@@ -96,7 +97,7 @@
             "            <th width=\"90\">删除用户</th>\n" +
             "        </tr>"
         for (var tuser of userStr) {
-            if (tuser.userId = userId) {
+            if (tuser.userId == userId) {
                 html += getUserHtml(tuser)
                 $("#allUser").html(html)
                 $("#pageLine").hide()

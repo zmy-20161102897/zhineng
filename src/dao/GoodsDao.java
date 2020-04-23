@@ -22,7 +22,7 @@ public class GoodsDao {
             goods.setGoodsName(resultSet.getString(2));
             goods.setGoodsPrice(resultSet.getDouble(3));
             goods.setGoodsText(resultSet.getString(4));
-            goods.setAdminId(resultSet.getInt(5));
+            goods.setUserId(resultSet.getInt(5));
             goods.setCoverImg1(resultSet.getString(6));
             goods.setCoverImg2(resultSet.getString(7));
             goods.setCoverImg3(resultSet.getString(8));
@@ -56,10 +56,10 @@ public class GoodsDao {
         }
     }
 
-    public List<Tgoods> queryGoodsByAdminId(int adminId) {
-        String sql = "SELECT * FROM tgoods WHERE adminID = ?";
+    public List<Tgoods> queryGoodsByAdminId(int userId) {
+        String sql = "SELECT * FROM tgoods WHERE userID = ?";
         try {
-            return jdbcTemplate.query(sql, goodsShowRowMapper, adminId);
+            return jdbcTemplate.query(sql, goodsShowRowMapper, userId);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

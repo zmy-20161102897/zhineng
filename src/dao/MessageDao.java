@@ -18,11 +18,11 @@ public class MessageDao {
                 message.setMesId(resultSet.getInt(1));
                 message.setMesSubject(resultSet.getString(2));
                 message.setMesText(resultSet.getString(3));
-                message.setMesPhoto(resultSet.getString(4));
-                message.setMesDate(resultSet.getDate(5));
-                message.setUserId(resultSet.getInt(6));
-                message.setCid(resultSet.getInt(7));
-                message.setZancount(resultSet.getInt(8));
+                //message.setMesPhoto(resultSet.getString(4));
+                message.setMesDate(resultSet.getDate(4));
+                message.setUserId(resultSet.getInt(5));
+                message.setCid(resultSet.getInt(6));
+                message.setZancount(resultSet.getInt(7));
                 return message;
             }
         };
@@ -34,12 +34,12 @@ public class MessageDao {
             message.setMesId(resultSet.getInt(1));
             message.setMesSubject(resultSet.getString(2));
             message.setMesText(resultSet.getString(3));
-            message.setMesPhoto(resultSet.getString(4));
-            message.setMesDate(resultSet.getDate(5));
-            message.setUserId(resultSet.getInt(6));
-            message.setCid(resultSet.getInt(7));
-            message.setZancount(resultSet.getInt(8));
-            message.setUserName(resultSet.getString(10));
+            //message.setMesPhoto(resultSet.getString(4));
+            message.setMesDate(resultSet.getDate(4));
+            message.setUserId(resultSet.getInt(5));
+            message.setCid(resultSet.getInt(6));
+            message.setZancount(resultSet.getInt(7));
+            message.setUserName(resultSet.getString(9));
             //message.setCname(resultSet.getString(12));
             return message;
         }

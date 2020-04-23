@@ -111,7 +111,7 @@
         return "<tr><td width=\"400\" class=\"tbTitle name\" style=\"text-align: left\"><a onclick='findNotice(" + notice.noticeId + ")'>" +
             notice.noticeTitle + "</a></td><td width=\"120\" class=\"tbTitle\">" +
             notice.noticeDate + "</td><td width=\"200\" class=\"tbTitle\">" +
-            notice.adminName + "</td>\n" +
+            notice.userName + "</td>\n" +
             "<td width=\"120\"><input class=\"delete\" type=\"image\" src=\"img/shanchu.png\" " +
             "onclick=\"deleteNotice(" + notice.noticeId + ")\"></td></tr>"
     }

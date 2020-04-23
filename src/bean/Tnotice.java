@@ -8,16 +8,16 @@ public class Tnotice {
     private long noticeId;
     private String noticeTitle;
     private String noticeText;
-    private long adminId;
+    private long userId;
     private java.sql.Date noticeDate;
-    private String adminName;
+    private String userName;
 
-    public String getAdminName() {
-        return adminName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public long getNoticeId() {
@@ -64,12 +64,12 @@ public class Tnotice {
     }
 
 
-    public long getAdminId() {
-        return adminId;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setAdminId(long adminId) {
-        this.adminId = adminId;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
 

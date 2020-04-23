@@ -47,9 +47,7 @@ public class Img2StrUtils {
             ByteArrayInputStream bais = new ByteArrayInputStream(bytes1);
             BufferedImage bi1 = ImageIO.read(bais);
             File w2 = new File(tempPathName + "." + type);
-            if (!w2.exists()) {
-                ImageIO.write(bi1, type, w2);
-            }
+            ImageIO.write(bi1, type, w2);
         } catch (IOException e) {
             e.printStackTrace();
         }

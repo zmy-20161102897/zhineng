@@ -61,7 +61,7 @@
     $(function () {
         messageStr =
         <%=JSON.toJSONString(messageList)%>
-        //console.log(messageStr)
+        console.log(messageStr)
         var messageArray = $.map(<%=JSON.toJSONString(MessageMap)%>, function (value, key) {
             return {value: value, data: key};
         });
@@ -72,6 +72,7 @@
 
     function getPageData(pageNum, pageSize) {
         var messages = messageStr.slice(pageNum * pageSize, (pageNum + 1) * pageSize)
+        console.log(messages)
         var html = "<tr bgcolor=\"#FFCF9F\" height=\"40\">\n" +
             "                <th width=\"400\">帖子名称</th>\n" +
             "                <th width=\"230\">发布人</th>\n" +
@@ -97,23 +98,24 @@
             "                <th width=\"50\">删除</th>\n" +
             "            </tr>"
         for (var tmessage of messageStr) {
-            if (tmessage.mesID == mesId) {
+            if (tmessage.mesId == mesId) {
                 html += getMessageHtml(tmessage)
                 $("#allUserMessage").html(html)
                 $("#pageLine").hide()
                 return
             }
         }
+        //console.log(tmessage);
     }
 
-    function getMessageHtml(message) {
-        console.log(message)
-        return "<tr class=\"tableHeight\"><td width=\"400\" style=\"text-align: left\"><a onclick='findMessage(" + message.mesId + ")'>" +
-            message.fullMessageSubject + "</a></td><td width=\"120\" >" +
-            message.userName + "</td><td width=\"200\" >" +
-            message.zancount + "</td>\n" +
+    function getMessageHtml(tmessage) {
+        //console.log(tmessage)
+        return "<tr class=\"tableHeight\"><td width=\"400\" style=\"text-align: left\"><a onclick='findMessage(" + tmessage.mesId + ")'>" +
+            tmessage.fullMessageSubject + "</a></td><td width=\"120\" >" +
+            tmessage.userName + "</td><td width=\"200\" >" +
+            tmessage.zancount + "</td>\n" +
             "<td width=\"120\"><input type=\"image\" src=\"img/shanchu.png\" " +
-            "onclick=\"deleteMessage(" + message.mesId + ")\"></td></tr>"
+            "onclick=\"deleteMessage(" + tmessage.mesId + ")\"></td></tr>"
     }
 
     function findMessage(mesId) {

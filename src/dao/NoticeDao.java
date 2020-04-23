@@ -19,32 +19,32 @@ public class NoticeDao {
             notice.setNoticeId(resultSet.getInt(1));
             notice.setNoticeTitle(resultSet.getString(2));
             notice.setNoticeText(resultSet.getString(3));
-            notice.setAdminId(resultSet.getInt(4));
+            notice.setUserId(resultSet.getInt(4));
             notice.setNoticeDate(resultSet.getDate(5));
             return notice;
         }
     };
 
-    private RowMapper<Tnotice> noticeAdminRowMapper = new RowMapper<Tnotice>() {
+    private RowMapper<Tnotice> noticeUserRowMapper = new RowMapper<Tnotice>() {
         @Override
         public Tnotice mapRow(ResultSet resultSet, int i) throws SQLException {
             Tnotice notice = new Tnotice();
             notice.setNoticeId(resultSet.getInt(1));
             notice.setNoticeTitle(resultSet.getString(2));
             notice.setNoticeText(resultSet.getString(3));
-            notice.setAdminId(resultSet.getInt(4));
+            notice.setUserId(resultSet.getInt(4));
             notice.setNoticeDate(resultSet.getDate(5));
-            notice.setAdminName(resultSet.getString(7));
+            notice.setUserName(resultSet.getString(7));
             return notice;
         }
     };
 
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(C3p0Utils.getDataSource());
 
-    public List<Tnotice> queryNoticeByAdminId(int adminId) {
-        String sql = "SELECT * FROM tnotice WHERE adminID = ?";
+    public List<Tnotice> queryNoticeByUserId(int userId) {
+        String sql = "SELECT * FROM tnotice WHERE userID = ?";
         try {
-            return jdbcTemplate.query(sql, noticeRowMapper, adminId);
+            return jdbcTemplate.query(sql, noticeRowMapper, userId);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -92,19 +92,19 @@ public class NoticeDao {
     }
 
     public List<Tnotice> queryAllNotice() {
-        String sql = "SELECT * FROM tnotice,tadmin WHERE tnotice.adminID = tadmin.adminID ORDER BY tnotice.noticeDate DESC ";
+        String sql = "SELECT * FROM tnotice,tuser WHERE tnotice.userID = tuser.userID ORDER BY tnotice.noticeDate DESC ";
         try {
-            return jdbcTemplate.query(sql, noticeAdminRowMapper);
+            return jdbcTemplate.query(sql, noticeUserRowMapper);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public int insertNotice(String title, String text, long adminId, Date date) {
+    public int insertNotice(String title, String text, long userId, Date date) {
         String sql = "INSERT INTO tnotice VALUES (null,?,?,?,?)";
         try {
-            return jdbcTemplate.update(sql, title, text, adminId, date);
+            return jdbcTemplate.update(sql, title, text, userId, date);
         } catch (Exception e) {
             e.printStackTrace();
             return -1;

@@ -1,6 +1,6 @@
-<%@ page import="bean.Tadmin" %>
+<%@ page import="bean.Tuser" %>
 <%@ page import="com.alibaba.fastjson.JSON" %>
-<%@ page import="service.AdminService" %>
+<%@ page import="service.UserService" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %><%--
@@ -31,11 +31,11 @@
 <!--管理员表格开始-->
 <div class="adminTable">
     <%
-        List<Tadmin> adminList = new AdminService().queryAllAdmin();
-        Tadmin curAdmin = (Tadmin) session.getAttribute("admin");
+        List<Tuser> adminList = new UserService().queryAllAdmin();
+        Tuser curAdmin = (Tuser) session.getAttribute("user");
         int remove = -1;
         for (int i = 0; i < adminList.size(); i++) {
-            if (adminList.get(i).getAdminId() == curAdmin.getAdminId()) {
+            if (adminList.get(i).getUserId() == curAdmin.getUserId()) {
                 remove = i;
                 break;
             }
@@ -43,8 +43,8 @@
         adminList.remove(remove);
 
         Map<Long, String> adminMap = new HashMap<>();
-        for (Tadmin tadmin : adminList) {
-            adminMap.put(tadmin.getAdminId(), tadmin.getAdminName());
+        for (Tuser tuser : adminList) {
+            adminMap.put(tuser.getUserId(), tuser.getUserName());
         }
     %>
     <table border="0" cellspacing="0" cellpadding="0" id="allAdmin"></table>
@@ -66,10 +66,11 @@
     $(function () {
         adminStr =
         <%=JSON.toJSONString(adminList)%>
+        console.log(adminStr)
         var adminArray = $.map(<%=JSON.toJSONString(adminMap)%>, function (value, key) {
             return {value: value, data: key};
         })
-
+        console.log(adminArray)
         pagiantion(adminStr, 10)
         search(adminArray)
     })
@@ -86,13 +87,13 @@
             // "            <th width=\"90\">详&nbsp;&nbsp;情</th>\n" +
             "            <th width=\"90\"></th>\n" +
             "        </tr>"
-        for (var tadmin of admins) {
-            html += getAdminHtml(tadmin)
+        for (var tuser of admins) {
+            html += getAdminHtml(tuser)
         }
         $("#allAdmin").html(html)
     }
 
-    function showSelectMsg(adminId) {
+    function showSelectMsg(userId) {
         var html = "<tr bgcolor=\"#FFCF9F\" height=\"40\">\n" +
             "            <th width=\"150\"></th>\n" +
             "            <th width=\"200\">昵称</th>\n" +
@@ -103,9 +104,9 @@
             // "            <th width=\"90\">详&nbsp;&nbsp;情</th>\n" +
             "            <th width=\"90\"></th>\n" +
             "        </tr>"
-        for (var tadmin of adminStr) {
-            if (tadmin.adminId == adminId) {
-                html += getAdminHtml(tadmin)
+        for (var tuser of adminStr) {
+            if (tuser.userId == userId) {
+                html += getAdminHtml(tuser)
                 $("#allAdmin").html(html)
                 $("#pageLine").hide()
                 return
@@ -113,22 +114,22 @@
         }
     }
 
-    function getAdminHtml(tadmin) {
+    function getAdminHtml(tuser) {
         return "<tr>\n" +
-            "            <td width=\"150\"><img src='img/admin/" + tadmin.adminId + ".png' >" + "</td>\n" +
-            "            <td width=\"200\">" + "<a onclick='findAdmin(" + tadmin.adminId + ")'>" + tadmin.adminName + "</a></td>\n" +
-            "            <td width=\"70\">" + tadmin.adminSex + "</td>\n" +
-            "            <td width=\"120\">" + tadmin.adminBirthday + "</td>\n" +
-            "            <td width=\"160\">" + tadmin.adminMobile + "</td>\n" +
-            "            <td width=\"190\">" + tadmin.adminEmail + "</td>\n" +
+            "            <td width=\"150\"><img src='img/user/" + tuser.userId + ".png' >" + "</td>\n" +
+            "            <td width=\"200\">" + "<a onclick='findAdmin(" + tuser.userId + ")'>" + tuser.userName + "</a></td>\n" +
+            "            <td width=\"70\">" + tuser.userSex + "</td>\n" +
+            "            <td width=\"120\">" + tuser.userBirthday + "</td>\n" +
+            "            <td width=\"160\">" + tuser.userMobile + "</td>\n" +
+            "            <td width=\"190\">" + tuser.userEmail + "</td>\n" +
             // "            <td width=\"90\"><a onclick='findAdmin(" + tadmin.adminId + ")'>详&nbsp;&nbsp;情</a></td>\n" +
             "            <td width=\"90\"></td>\n" +
             //    留&nbsp;&nbsp;言
             "        </tr>"
     }
 
-    function findAdmin(adminId) {
-        window.location.href = "information_m.jsp?adminID=" + adminId
+    function findAdmin(userId) {
+        window.location.href = "information_m.jsp?adminID=" + userId
     }
 
 </script>

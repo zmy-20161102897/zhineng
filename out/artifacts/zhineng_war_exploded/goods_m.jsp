@@ -65,8 +65,6 @@
         // console.log(goodArray)
 
         pagiantion(goodsStr, 3)
-
-
         search(goodArray)
 
         $("td").each(function (i, el) {
@@ -102,7 +100,7 @@
             "                <th width=\"110\">操&nbsp;&nbsp;作</th>\n" +
             "            </tr>"
         for (var tgoods of goodsStr) {
-            if (tgoods.goodsId = goodsId) {
+            if (tgoods.goodsId == goodsId) {
                 html += getGoodsHtml(tgoods)
                 $("#allGoods").html(html)
                 $("#pageLine").hide()
