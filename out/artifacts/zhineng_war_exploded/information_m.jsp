@@ -147,6 +147,7 @@
                     if (confirm("确定要修改吗")) {
                         // 当 FileReader 读取文件时候，读取的结果会放在 FileReader.result 属性中
                         document.querySelector('#headImg').src = this.result;
+                        console.log(this.result)
                         console.log(this.result.split(",")[1])
                         alert("修改成功")
 

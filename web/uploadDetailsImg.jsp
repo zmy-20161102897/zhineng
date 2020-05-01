@@ -25,7 +25,7 @@
     <div class="maskDeContent">
         <p class="deleteDeText">确定要删除图片？</p>
         <p class="delDeCheckText">
-            <span class="deleteDeImg aui-accept-ok">确定</span>
+            <span class="deleteDeImg aui-det-accept-ok">确定</span>
             <span class="aui-accept-no">取消</span>
         </p>
     </div>
@@ -67,6 +67,14 @@
                 fileList = validateUp(fileList);
                 for (var i = 0; i < fileList.length; i++) {
                     var imgUrl = window.URL.createObjectURL(fileList[i]);
+                    var fileReader = new FileReader();
+                    fileReader.readAsDataURL(fileList[i]);
+                    fileReader.onload = function(e) {
+                        $.post("addGoods.jsp",{
+                            type:"intro",
+                            data:this.result.split(",")[1]
+                        },"json");
+                    };
                     imgArr.push(imgUrl);
                     var $section = $("<section class='showDeImgSection fl deLoading'>");
                     imgContainer.prepend($section);
@@ -95,7 +103,7 @@
             setTimeout(function() {
                 $(".showDeImgSection").removeClass("deLoading");
                 $(".de-to-up-img").removeClass("de-up-clarity");
-            }, 4100);
+            }, 500);
             numUp = imgContainer.find(".showDeImgSection").length;
             if (numUp >= 5) {
                 $(this).parent().hide();
@@ -109,14 +117,35 @@
             delParent = $(this).parent();
         });
 
-        $(".aui-accept-ok").click(function() {
+        $(".aui-det-accept-ok").click(function() {
             $(".de-works-mask").hide();
             var numUp = delParent.siblings().length;
-            if (numUp < 5) {
+            if (numUp < 6) {
                 delParent.parent().find(".uploadBackDeImg").show();
             }
-            delParent.remove();
 
+            var imgSrc = delParent.find(".de-to-up-img")[0].src;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', imgSrc);
+            xhr.responseType = 'blob';
+            xhr.onload = function (e) {
+                if (this.status === 200) {
+                    var blob = this.response; // blob is now the blob that the object URL pointed to.
+
+                    var fileReader = new FileReader();
+                    fileReader.readAsDataURL(blob);
+                    fileReader.onload = function (e) {
+                        $.post("addGoods.jsp",{
+                            type:"intro_del",
+                            data:this.result.split(",")[1]
+                        },"json")
+                    }
+                }
+            };
+            xhr.send();
+
+            URL.revokeObjectURL(imgSrc);
+            delParent.remove();
         });
 
         $(".aui-accept-no").click(function() {

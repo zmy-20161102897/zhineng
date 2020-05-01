@@ -33,34 +33,34 @@
         <!--标题及回复数结束-->
         <!--主贴开始-->
         <div class="main-invitation">
-            <!--头像和昵称开始-->
+            <!--发帖人信息框开始-->
             <div class="initiator">
                 <img class="initiator-img" src='img/user/<%=tuser.getUserId()%>.png'>
                 <a class="initiator-name" href="userDetails_m.jsp" target="_blank"><%=tuser.getUserName()%></a>
             </div>
-            <!--头像和昵称结束-->
-            <!--主贴内容开始-->
+            <!--发帖人信息框结束-->
+            <!--帖子框开始-->
             <div class="invitation-content">
-                <p style="text-indent: 2em"><%=tmessage.getMesText()%></p>
+                <p class="invitation-text" style="text-indent: 2em"><%=tmessage.getMesText()%></p>
                 <div class="invitation-else">
                     <span class="invitation-date"><%=tmessage.getMesDate()%></span>
                     <span class="reply-number">回复数：15558</span>
                 </div>
             </div>
-            <!--主贴内容结束-->
+            <!--帖子框结束-->
         </div>
         <!--主贴结束-->
-        <!--回复开始-->
-        <div class="answer-invitation">
-            <!--头像和昵称开始-->
+        <!--回复框开始-->
+        <div class="answer">
+            <!--回复者信息框开始-->
             <div class="answerer">
                 <img class="answerer-img" src="img/user.png">
                 <a class="answerer-name" href="userDetails_m.jsp" target="_blank">用户昵称用户昵称用户</a>
             </div>
-            <!--头像和昵称结束-->
+            <!--回复者信息框结束-->
             <!--回复内容开始-->
             <div class="answer-content">
-                <p style="text-indent: 2em">智能家居是以住宅为平台， 利用技术将家居生活有关的设施集成</p>
+                <p class="answer-text" style="text-indent: 2em">智能家居是以住宅为平台， 利用技术将家居生活有关的设施集成</p>
                 <div class="answer-else">
                     <span class="answer-date">2020-03-27&nbsp;12:20:18</span>
                     <div class="check-comment">
@@ -69,26 +69,26 @@
                     <a class="delete-answer">删除</a>
                 </div>
                 <!--评论开始-->
-                <div class="all-comment">
-                    <ul>
-                        <li>
-                            <img src="img/user.png">
-                            <div class="comment-content">
-                                <a class="comment-user-name" href="userDetails_m.jsp">此处显示用户名aaaa&nbsp;&nbsp;</a>
-                                <span>此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容</span>
-                                <div class="comment-else">
-                                    <span class="comment-date">2020-04-08&nbsp;15:03:15</span>
-                                    <a href="#">删除</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+<%--                <div class="all-comment">--%>
+<%--                    <ul>--%>
+<%--                        <li>--%>
+<%--                            <img src="img/user.png">--%>
+<%--                            <div class="comment-content">--%>
+<%--                                <a class="comment-user-name" href="userDetails_m.jsp">此处显示用户名aaaa&nbsp;&nbsp;</a>--%>
+<%--                                <span>此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容此处显示评论内容</span>--%>
+<%--                                <div class="comment-else">--%>
+<%--                                    <span class="comment-date">2020-04-08&nbsp;15:03:15</span>--%>
+<%--                                    <a href="#">删除</a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                </div>--%>
                 <!--评论结束-->
             </div>
             <!--回复内容结束-->
         </div>
-        <!--回复结束-->
+        <!--回复框结束-->
     </div>
 
 </body>

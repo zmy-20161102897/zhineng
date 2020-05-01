@@ -24,31 +24,29 @@ body{ font-size: 14px;}
     padding: 7px 0 7px 10px;
     border-bottom: #C8C8C8 solid 1px;
 }
-/*主贴及回复样式*/
-.main-invitation, .answer-invitation{
+/*帖子框样式*/
+.main-invitation, .answer{
     display: flex;
     border-bottom: #C8C8C8 solid 1px;
 }
-.main-invitation .initiator, .answer-invitation .answerer{
+
+/*发布者或回复者信息框样式*/
+.main-invitation .initiator, .answer .answerer{
     width: 159px;
     height: auto;
+    min-height: 180px;
     background: #fafbfc;
     border-right: #C8C8C8 solid 1px;
 }
-.main-invitation .invitation-content, .answer-invitation .answer-content{
-    width: 740px;
-    height: auto;
-    position: relative;
-}
 /*头像样式*/
-.main-invitation .initiator .initiator-img, .answer-invitation .answerer .answerer-img{
+.initiator .initiator-img, .answerer .answerer-img{
     display: block;
     margin: 20px auto;
     width: 100px;
     height: 100px;
 }
 /*昵称样式*/
-.main-invitation .initiator .initiator-name, .answer-invitation .answerer .answerer-name{
+.initiator .initiator-name, .answerer .answerer-name{
     display: block;
     width: 150px;
     margin: 0 auto;
@@ -57,53 +55,46 @@ body{ font-size: 14px;}
     padding-bottom: 20px;
     color: black;
 }
-.main-invitation .initiator .initiator-name:hover, .answer-invitation .answerer .answerer-name:hover{
+.initiator .initiator-name:hover, .answerer .answerer-name:hover{
     color: red;
     cursor: pointer;
 }
-/*主贴内容样式*/
-.main-invitation .invitation-content p, .answer-invitation .answer-content p{
-    padding: 15px 15px;
-}
-.main-invitation .invitation-content p{
-    margin-bottom: 15px;
-}
-/*主贴时间和回复数样式*/
-.invitation-content .invitation-else{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 40px;
+
+/*主贴和回复框样式*/
+.main-invitation .invitation-content, .answer .answer-content{
     width: 740px;
-    display: flex;
+    height: auto;
+    /*position: relative;*/
 }
-.invitation-content .invitation-else .invitation-date{
+/*主贴和回复文字样式*/
+.invitation-content .invitation-text, .answer-content .answer-text{
+    padding: 15px 15px;
     display: block;
-    width: 140px;
-    line-height: 40px;
-    padding-left: 15px;
-}
-.invitation-content .invitation-else .reply-number{
-    display: block;
-    width: 600px;
-    line-height: 40px;
-    text-align: right;
-    padding-right: 15px;
+    min-height: 110px;
+    height: auto;
 }
 
-/*回复时间和评论div样式*/
-.answer-content .answer-else{
+/*主贴和回复其他内容的样式*/
+.invitation-content .invitation-else, .answer-content .answer-else{
     height: 40px;
     width: 740px;
     display: flex;
-    margin-top: 110px;
 }
-.answer-content .answer-else .answer-date{
+.invitation-content .invitation-else .invitation-date, .answer-content .answer-else .answer-date{
     display: block;
     width: 200px;
     line-height: 40px;
     padding-left: 15px;
 }
+/*主贴回复数样式*/
+.invitation-content .invitation-else .reply-number{
+    display: block;
+    width: 540px;
+    line-height: 40px;
+    text-align: right;
+    padding-right: 15px;
+}
+/*回复所有评论样式*/
 .answer-content .answer-else .check-comment{
     width: 490px;
     height: 40px;
@@ -114,6 +105,7 @@ body{ font-size: 14px;}
     color: black;
     cursor: pointer;
 }
+/*回复删除样式*/
 .answer-content .answer-else .delete-answer{
     color: red;
     display: block;
@@ -129,50 +121,50 @@ body{ font-size: 14px;}
     font-size: 16px;
 }
 /*评论样式*/
-.answer-content .all-comment{
-    width: 710px;
-    height: auto;
-    background: #f7f8fa;
-    margin: 10px 15px;
-}
-.answer-content .all-comment ul{}
-.answer-content .all-comment ul li{
-    min-height: 70px;
-    height: auto;
-}
-.answer-content .all-comment ul li img{
-    width: 50px;
-    height: 50px;
-    margin: 10px 10px;
-    float: left;
-}
-.answer-content .all-comment ul li .comment-content{
-    height: auto;
-    min-height: 50px;
-    padding-top: 10px;
-    padding-right: 15px;
-}
-.answer-content .all-comment ul li .comment-content .comment-user-name{
-    color: #2d64b3;
-    line-height: 15px;
-}
-.answer-content .all-comment ul li .comment-content .comment-user-name:hover{
-    text-decoration: underline;
-}
-.answer-content .all-comment ul li .comment-content span{
-    line-height: 25px;
-}
-.answer-content .all-comment ul li .comment-content .comment-else{
-    text-align: right;
-    height: 30px;
-    line-height: 30px;
-}
-.answer-content .all-comment ul li .comment-content .comment-else span{
-    color: gray;
-}
-.answer-content .all-comment ul li .comment-content .comment-else a{
-    color: red;
-}
-.answer-content .all-comment ul li .comment-content .comment-else a:hover{
-    font-weight: bold;
-}
+/*.answer-content .all-comment{*/
+/*    width: 710px;*/
+/*    height: auto;*/
+/*    background: #f7f8fa;*/
+/*    margin: 10px 15px;*/
+/*}*/
+/*.answer-content .all-comment ul{}*/
+/*.answer-content .all-comment ul li{*/
+/*    min-height: 70px;*/
+/*    height: auto;*/
+/*}*/
+/*.answer-content .all-comment ul li img{*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    margin: 10px 10px;*/
+/*    float: left;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content{*/
+/*    height: auto;*/
+/*    min-height: 50px;*/
+/*    padding-top: 10px;*/
+/*    padding-right: 15px;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content .comment-user-name{*/
+/*    color: #2d64b3;*/
+/*    line-height: 15px;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content .comment-user-name:hover{*/
+/*    text-decoration: underline;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content span{*/
+/*    line-height: 25px;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content .comment-else{*/
+/*    text-align: right;*/
+/*    height: 30px;*/
+/*    line-height: 30px;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content .comment-else all-comment{*/
+/*    color: gray;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content .comment-else a{*/
+/*    color: red;*/
+/*}*/
+/*.answer-content .all-comment ul li .comment-content .comment-else a:hover{*/
+/*    font-weight: bold;*/
+/*}*/

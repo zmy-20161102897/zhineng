@@ -19,6 +19,9 @@
             <div class="noticeTitle">
                 <span>标题：</span>
                 <input type="text" name="title" required onkeyup="noticeTitleLength(this)"/>
+                <span class="noticeTextWordage" style="font-size: 13px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;剩余字数：
+                    <span id="noticeTextRemain" style="color: red; font-size: 13px;">30</span>
+                </span>
             </div>
             <div class="noticeText">
                 <span>正文：</span>
@@ -34,11 +37,15 @@
     <script type="text/javascript">
         function noticeTitleLength(which) {
             var maxChars = 30; //
-            if(which.value.length > maxChars){
+            if(which.value.length > maxChars) {
                 alert("最多输入30个字!");
                 // 超过限制的字数了就将 文本框中的内容按规定的字数 截取 从第一个字符开始到上限
                 which.value = which.value.substring(0,maxChars);
                 return false;
+            } else {
+                var curr = maxChars - which.value.length; //30 减去 当前输入的
+                document.getElementById("noticeTextRemain").innerHTML = curr.toString();
+                return true;
             }
         }
     </script>

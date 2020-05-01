@@ -13,23 +13,24 @@
 <link rel="stylesheet" type="text/css" href="css/uploadGoodsImg.css">
 <body>
 <%--    <div class="aui-content-up">--%>
-    <div class="uploadInfoBox uploadInfoImg clear">
-        <section class="infoBackImg fl">
-            <img src="img/up.png" class="addInfoImg">
-            <input type="file" name="file" id="infoFile" class="infoFile" value="" accept="image/jpg,image/jpeg,image/png" multiple/>
-        </section>
-    </div>
+<div class="uploadInfoBox uploadInfoImg clear">
+    <section class="infoBackImg fl">
+        <img src="img/up.png" class="addInfoImg">
+        <input type="file" name="file" id="infoFile" class="infoFile" value="" accept="image/jpg,image/jpeg,image/png"
+               multiple/>
+    </section>
+</div>
 <%--    </div>--%>
-    <!-- mask begin -->
-    <div class="infoMask info-works-mask">
-        <div class="infoMaskContent">
-            <p class="deleteInfoText">确定要删除图片？</p>
-            <p class="delInfoCheckText">
-                <span class="deleteInfoImg aui-accept-ok">确定</span>
-                <span class="aui-accept-no">取消</span>
-            </p>
-        </div>
+<!-- mask begin -->
+<div class="infoMask info-works-mask">
+    <div class="infoMaskContent">
+        <p class="deleteInfoText">确定要删除图片？</p>
+        <p class="delInfoCheckText">
+            <span class="deleteInfoImg aui-accept-ok">确定</span>
+            <span class="aui-accept-no">取消</span>
+        </p>
     </div>
+</div>
 <!-- mask end -->
 <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 <%--<script type="text/javascript" src="js/up.js"></script>--%>
@@ -37,7 +38,7 @@
 
 <script>
 
-    $(function() {
+    $(function () {
         var delParent;
         var defaults = {
             fileType: ["jpg", "png", "jpeg"],
@@ -45,7 +46,7 @@
             //fileSize: 1024 * 1024 * 10 // 上传的图片大小不得超过 10M
         };
         /*点击图片*/
-        $(".infoFile").change(function() {
+        $(".infoFile").change(function () {
             var idFile = $(this).attr("id");
             var file = document.getElementById(idFile);
             var imgContainer = $(this).parents(".uploadInfoBox");
@@ -67,13 +68,21 @@
                 fileList = validateUp(fileList);
                 for (var i = 0; i < fileList.length; i++) {
                     var imgUrl = window.URL.createObjectURL(fileList[i]);
+                    var fileReader = new FileReader();
+                    fileReader.readAsDataURL(fileList[i]);
+                    fileReader.onload = function (e) {
+                        $.post("addGoods.jsp", {
+                            type: "cover",
+                            data: this.result.split(",")[1]
+                        }, "json");
+                    };
                     imgArr.push(imgUrl);
                     var $section = $("<section class='showInfoImgSection fl infoLoading'>");
                     imgContainer.prepend($section);
                     var $span = $("<span class='info-up-span'>");
                     $span.appendTo($section);
 
-                    var $img0 = $("<img class='closeShowInfoImg'>").on("click", function(event) {
+                    var $img0 = $("<img class='closeShowInfoImg'>").on("click", function (event) {
                         event.preventDefault();
                         event.stopPropagation();
                         $(".info-works-mask").show();
@@ -92,10 +101,10 @@
 
                 }
             }
-            setTimeout(function() {
+            setTimeout(function () {
                 $(".showInfoImgSection").removeClass("infoLoading");
                 $(".info-to-up-img").removeClass("info-up-clarity");
-            }, 4100);
+            }, 500);
             numUp = imgContainer.find(".showInfoImgSection").length;
             if (numUp >= 5) {
                 $(this).parent().hide();
@@ -104,22 +113,43 @@
             $(this).val("");
         });
 
-        $(".uploadInfoBox").delegate(".closeShowInfoImg", "click", function() {
+        $(".uploadInfoBox").delegate(".closeShowInfoImg", "click", function () {
             $(".info-works-mask").show();
             delParent = $(this).parent();
         });
 
-        $(".aui-accept-ok").click(function() {
+        $(".aui-accept-ok").click(function () {
             $(".info-works-mask").hide();
             var numUp = delParent.siblings().length;
-            if (numUp < 5) {
+            if (numUp < 6) {
                 delParent.parent().find(".infoBackImg").show();
             }
-            delParent.remove();
 
+            var imgSrc = delParent.find(".info-to-up-img")[0].src;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', imgSrc);
+            xhr.responseType = 'blob';
+            xhr.onload = function (e) {
+                if (this.status === 200) {
+                    var blob = this.response; // blob is now the blob that the object URL pointed to.
+
+                    var fileReader = new FileReader();
+                    fileReader.readAsDataURL(blob);
+                    fileReader.onload = function (e) {
+                        $.post("addGoods.jsp",{
+                            type:"cover_del",
+                            data:this.result.split(",")[1]
+                        },"json")
+                    }
+                }
+            };
+            xhr.send();
+
+            URL.revokeObjectURL(imgSrc);
+            delParent.remove();
         });
 
-        $(".aui-accept-no").click(function() {
+        $(".aui-accept-no").click(function () {
             $(".info-works-mask").hide();
         });
 
